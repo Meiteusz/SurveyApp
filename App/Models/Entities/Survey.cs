@@ -6,7 +6,7 @@ namespace Models
     public class Survey
     {
         public int Id { get; set; }
-        public string Status { get; set; }
+        public byte Status { get; set; }
         public DateTime OpeningDate { get; set; }
         public byte[] Local { get; set; }
         public string Description { get; set; }

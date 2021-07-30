@@ -1,0 +1,29 @@
+Users:
+
+Id : int
+UserType : string
+Name : string
+Cpf : string
+Login : string
+Email : string
+Password : string
+
+
+Surveys:
+
+Id : int
+Status : string
+OpeningDate : dateTime
+Local : byte[]
+Description : string
+Adress : string
+AnalistId : int
+
+
+Occurrences:
+
+Id : int
+Type : string
+Date : dateTime
+Description : string
+SurveytId : int

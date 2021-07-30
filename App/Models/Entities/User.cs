@@ -1,9 +1,11 @@
-﻿namespace Models
+﻿using Models.Entities.Interfaces;
+
+namespace Models
 {
-    public class User
+    public class User : IUser
     {
         public int Id { get; set; }
-        public string UserType { get; set; }
+        public byte UserType { get; set; }
         public string Name { get; set; }
         public string Cpf { get; set; }
         public string Login { get; set; }

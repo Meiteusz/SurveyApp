@@ -2,5 +2,6 @@
 {
     public interface IUser
     {
+        Response LoginUser(User user);
     }
 }

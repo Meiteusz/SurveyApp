@@ -12,11 +12,18 @@ namespace Controllers
             _User = user;
         }
 
+        public User Create() => new User();
+
         public User Create(string Login, string Password) => new User(Login, Password);
-        
-        public Response LoginUser(User user)
+
+        public ResponseData<User> LoginUser(User user)
         {
             return _User.LoginUser(user);
+        }
+
+        public bool UserIsAdmin(User user)
+        {
+            return _User.UserIsAdmin(user);
         }
     }
 }

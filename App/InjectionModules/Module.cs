@@ -4,7 +4,7 @@ using Ninject;
 using Ninject.Modules;
 using System.Reflection;
 
-namespace SurveyApp
+namespace InjectionModules
 {
     public class Module : NinjectModule
     {

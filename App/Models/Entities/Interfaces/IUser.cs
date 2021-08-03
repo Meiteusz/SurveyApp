@@ -2,6 +2,7 @@
 {
     public interface IUser
     {
-        Response LoginUser(User user);
+        ResponseData<User> LoginUser(User user);
+        public bool UserIsAdmin(User user);
     }
 }

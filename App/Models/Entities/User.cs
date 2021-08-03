@@ -24,9 +24,9 @@ namespace Models
             Password = p_password;
         }
 
-        public Response LoginUser(User user)
+        public ResponseData<User> LoginUser(User user)
         {
-            Response response = new Response();
+            ResponseData<User> response = new ResponseData<User>();
             User LoggedUser = new User();
 
             try
@@ -40,6 +40,7 @@ namespace Models
                 {
                     response.Success = true;
                     response.Messege = "User logged";
+                    response.GetData = LoggedUser;
                 }
                 else
                 {
@@ -54,6 +55,13 @@ namespace Models
                 response.Messege = ex.Message;
             }
             return response;
+        }
+
+        public bool UserIsAdmin(User user)
+        {
+            if (user.UserType.Equals(0))
+                return true;
+            return false;
         }
     }
 }

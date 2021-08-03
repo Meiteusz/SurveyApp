@@ -5,7 +5,9 @@ namespace Controllers
 {
     public interface IUserBLL
     {
+        User Create();
         User Create(string Login, string Password);
-        Response LoginUser(User user);
+        ResponseData<User> LoginUser(User user);
+        public bool UserIsAdmin(User user);
     }
 }

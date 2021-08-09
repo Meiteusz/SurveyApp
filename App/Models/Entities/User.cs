@@ -16,6 +16,7 @@ namespace Models
         public string Password { get; set; }
         #endregion
 
+        #region Constructors
         public User() { }
 
         public User(string p_login, string p_password)
@@ -23,6 +24,17 @@ namespace Models
             Login = p_login;
             Password = p_password;
         }
+
+        public User(string p_Name, byte p_UserType, string p_Cpf, string p_Login, string p_Email, string p_Password)
+        {
+            Name = p_Name;
+            UserType = p_UserType;
+            Cpf = p_Cpf;
+            Login = p_Login;
+            Email = p_Email;
+            Password = p_Password;
+        }
+        #endregion
 
         public ResponseData<User> LoginUser(User user)
         {
@@ -44,24 +56,37 @@ namespace Models
                 }
                 else
                 {
-                    response.Success = false;
                     response.Messege = "User not finded";
                 }
 
             }
             catch (Exception ex)
             {
-                response.Success = false;
                 response.Messege = ex.Message;
             }
             return response;
         }
 
-        public bool UserIsAdmin(User user)
+        public Response Insert(User user)
         {
-            if (user.UserType.Equals(0))
-                return true;
-            return false;
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Users.Add(user);
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Messege = "User Registered succeffuly";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Messege = ex.Message;
+            }
+            return response;
         }
     }
 }

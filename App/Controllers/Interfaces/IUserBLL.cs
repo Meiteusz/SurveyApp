@@ -1,5 +1,4 @@
 ﻿using Models;
-using Models.Entities.Interfaces;
 
 namespace Controllers
 {
@@ -7,7 +6,8 @@ namespace Controllers
     {
         User Create();
         User Create(string Login, string Password);
+        User Create(string Name,  byte UserType, string Cpf, string Login, string Email, string Password);
         ResponseData<User> LoginUser(User user);
-        public bool UserIsAdmin(User user);
+        Response Insert(User user);
     }
 }

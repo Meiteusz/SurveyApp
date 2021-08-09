@@ -1,7 +1,7 @@
 ﻿
-namespace SurveyApp
+namespace SurveyApp.ContentForms
 {
-    partial class FormContentAnalist
+    partial class FormContentOperator
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,31 @@ namespace SurveyApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnLogout = new MetroFramework.Controls.MetroButton();
             this.btnSettings = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.btnLogout = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroLabel1
+            // btnLogout
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(68, 57);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(62, 25);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Analist";
+            this.btnLogout.Location = new System.Drawing.Point(614, 366);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(163, 63);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseSelectable = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnSettings
             // 
             this.btnSettings.Image = global::SurveyApp.Properties.Resources.settings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(614, 24);
+            this.btnSettings.Location = new System.Drawing.Point(614, 26);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(163, 63);
-            this.btnSettings.TabIndex = 2;
+            this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseSelectable = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
@@ -67,33 +66,34 @@ namespace SurveyApp
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 3);
+            this.metroPanel1.Location = new System.Drawing.Point(1, 5);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(207, 447);
-            this.metroPanel1.TabIndex = 3;
+            this.metroPanel1.TabIndex = 7;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // btnLogout
+            // metroLabel1
             // 
-            this.btnLogout.Location = new System.Drawing.Point(614, 364);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(163, 63);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseSelectable = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(68, 57);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(81, 25);
+            this.metroLabel1.TabIndex = 1;
+            this.metroLabel1.Text = "Operator";
             // 
-            // FormContentAnalist
+            // FormContentOperator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnSettings);
-            this.Name = "FormContentAnalist";
+            this.Name = "FormContentOperator";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,9 +102,9 @@ namespace SurveyApp
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btnLogout;
         private MetroFramework.Controls.MetroButton btnSettings;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroButton btnLogout;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

@@ -1,10 +1,8 @@
-﻿using SurveyApp.ContentForms;
-
-namespace SurveyApp
+﻿namespace SurveyApp.ContentForms
 {
-    public partial class FormContentAnalist : MetroFramework.Forms.MetroForm
+    public partial class FormContentOperator : MetroFramework.Forms.MetroForm
     {
-        public FormContentAnalist()
+        public FormContentOperator()
         {
             InitializeComponent();
         }

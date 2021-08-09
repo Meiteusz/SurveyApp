@@ -41,12 +41,13 @@ namespace SurveyApp
             this.btn0 = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn1
             // 
             this.btn1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn1.Location = new System.Drawing.Point(31, 154);
+            this.btn1.Location = new System.Drawing.Point(12, 151);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(50, 50);
             this.btn1.TabIndex = 5;
@@ -57,7 +58,7 @@ namespace SurveyApp
             // btn2
             // 
             this.btn2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn2.Location = new System.Drawing.Point(107, 154);
+            this.btn2.Location = new System.Drawing.Point(79, 151);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(50, 50);
             this.btn2.TabIndex = 6;
@@ -68,7 +69,7 @@ namespace SurveyApp
             // btn3
             // 
             this.btn3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn3.Location = new System.Drawing.Point(182, 154);
+            this.btn3.Location = new System.Drawing.Point(148, 151);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(50, 50);
             this.btn3.TabIndex = 7;
@@ -79,7 +80,7 @@ namespace SurveyApp
             // btn4
             // 
             this.btn4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn4.Location = new System.Drawing.Point(31, 81);
+            this.btn4.Location = new System.Drawing.Point(12, 82);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(50, 50);
             this.btn4.TabIndex = 8;
@@ -90,7 +91,7 @@ namespace SurveyApp
             // btn5
             // 
             this.btn5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn5.Location = new System.Drawing.Point(107, 81);
+            this.btn5.Location = new System.Drawing.Point(79, 82);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(50, 50);
             this.btn5.TabIndex = 9;
@@ -101,7 +102,7 @@ namespace SurveyApp
             // btn6
             // 
             this.btn6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn6.Location = new System.Drawing.Point(182, 81);
+            this.btn6.Location = new System.Drawing.Point(148, 82);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(50, 50);
             this.btn6.TabIndex = 10;
@@ -112,7 +113,7 @@ namespace SurveyApp
             // btn7
             // 
             this.btn7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn7.Location = new System.Drawing.Point(31, 11);
+            this.btn7.Location = new System.Drawing.Point(12, 17);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(50, 50);
             this.btn7.TabIndex = 11;
@@ -123,7 +124,7 @@ namespace SurveyApp
             // btn8
             // 
             this.btn8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn8.Location = new System.Drawing.Point(107, 11);
+            this.btn8.Location = new System.Drawing.Point(79, 17);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(50, 50);
             this.btn8.TabIndex = 12;
@@ -134,7 +135,7 @@ namespace SurveyApp
             // btn9
             // 
             this.btn9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn9.Location = new System.Drawing.Point(182, 11);
+            this.btn9.Location = new System.Drawing.Point(148, 17);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(50, 50);
             this.btn9.TabIndex = 13;
@@ -145,9 +146,9 @@ namespace SurveyApp
             // btn0
             // 
             this.btn0.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn0.Location = new System.Drawing.Point(83, 223);
+            this.btn0.Location = new System.Drawing.Point(217, 17);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(100, 50);
+            this.btn0.Size = new System.Drawing.Size(50, 119);
             this.btn0.TabIndex = 14;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
@@ -156,30 +157,46 @@ namespace SurveyApp
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReset.Location = new System.Drawing.Point(284, 12);
+            this.btnReset.Location = new System.Drawing.Point(217, 151);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 50);
+            this.btnReset.Size = new System.Drawing.Size(50, 50);
             this.btnReset.TabIndex = 15;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "C";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(284, 154);
+            this.btnConfirm.Location = new System.Drawing.Point(294, 101);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(100, 50);
+            this.btnConfirm.Size = new System.Drawing.Size(88, 50);
             this.btnConfirm.TabIndex = 17;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.DimGray;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(294, 66);
+            this.txtPassword.MaxLength = 9;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.ReadOnly = true;
+            this.txtPassword.Size = new System.Drawing.Size(88, 29);
+            this.txtPassword.TabIndex = 18;
+            this.txtPassword.MouseEnter += new System.EventHandler(this.txtPassword_MouseEnter);
+            this.txtPassword.MouseLeave += new System.EventHandler(this.txtPassword_MouseLeave);
+            // 
             // FormPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 284);
+            this.ClientSize = new System.Drawing.Size(409, 211);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btn0);
@@ -194,8 +211,8 @@ namespace SurveyApp
             this.Controls.Add(this.btn1);
             this.Name = "FormPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormPassword";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,5 +230,6 @@ namespace SurveyApp
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

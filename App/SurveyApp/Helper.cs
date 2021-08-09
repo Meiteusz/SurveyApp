@@ -2,8 +2,18 @@
 
 namespace SurveyApp
 {
-    public static class Helper
+    public abstract class Helper // --> Class helper to controls forms
     {
+        public static Form OwnerForm { get; private set; }
+        public static void SetOwnerForm(Form ownerForm) => OwnerForm = ownerForm;
+
+        public static void ChangeForm(Form closeForm, Form openForm)
+        {
+            closeForm.Hide();
+            openForm.ShowDialog();
+            closeForm.Close();
+        }
+
         public static void ShowHidePassword(CheckBox cb, TextBox txtPassword)
         {
             if (cb.Checked)
@@ -16,13 +26,6 @@ namespace SurveyApp
                 txtPassword.UseSystemPasswordChar = true;
                 cb.Text = "Show Password";
             }
-        }
-
-        public static void ChangeForm(Form closeForm, Form openForm)
-        {
-            closeForm.Hide();
-            openForm.ShowDialog();
-            closeForm.Close();
         }
     }
 }

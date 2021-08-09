@@ -14,6 +14,8 @@ namespace SurveyApp
         {
             InitializeComponent();
             _userBLL = new UserBLL(Module.ConfiguratingModule());
+            txtLogin.Text = "teste";
+            txtPassword.Text = "123";
         }
 
         private void cbShowHidePassword_CheckedChanged(object sender, EventArgs e)

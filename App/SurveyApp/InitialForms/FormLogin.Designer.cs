@@ -75,9 +75,9 @@ namespace SurveyApp
             this.btnPassword.BackColor = System.Drawing.Color.Red;
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPassword.Location = new System.Drawing.Point(462, 121);
+            this.btnPassword.Location = new System.Drawing.Point(462, 120);
             this.btnPassword.Name = "btnPassword";
-            this.btnPassword.Size = new System.Drawing.Size(55, 28);
+            this.btnPassword.Size = new System.Drawing.Size(55, 29);
             this.btnPassword.TabIndex = 6;
             this.btnPassword.UseVisualStyleBackColor = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);

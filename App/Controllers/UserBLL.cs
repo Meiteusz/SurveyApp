@@ -5,7 +5,7 @@ namespace Controllers
 {
     public class UserBLL : IUserBLL
     {
-        public readonly IUser _User;
+        private readonly IUser _User;
 
         public UserBLL(IUser user)
         {

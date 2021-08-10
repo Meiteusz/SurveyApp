@@ -13,7 +13,7 @@ namespace SurveyApp
         public FormLogin()
         {
             InitializeComponent();
-            _userBLL = new UserBLL(Module.ConfiguratingModule());
+            _userBLL = new UserBLL(UserModule.ConfiguratingModule());
             txtLogin.Text = "teste";
             txtPassword.Text = "123";
         }

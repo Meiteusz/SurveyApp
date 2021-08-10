@@ -13,7 +13,7 @@ namespace SurveyApp.RegisterForms
         public FormRegisterUser()
         {
             InitializeComponent();
-            _userBLL = new UserBLL(Module.ConfiguratingModule());
+            _userBLL = new UserBLL(UserModule.ConfiguratingModule());
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace InjectionModules
 {
-    public class Module : NinjectModule
+    public class UserModule : NinjectModule
     {
         public override void Load()
         {

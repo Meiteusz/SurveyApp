@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Models.Entities.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Models
 {
-    public class Survey
+    public class Survey : ISurvey
     {
+        #region Properties
         public int Id { get; set; }
         public byte Status { get; set; }
         public DateTime OpeningDate { get; set; }
@@ -14,5 +16,7 @@ namespace Models
         public ICollection<Occurrence> OccurrenceList { get; set; }
         public int AnalistId { get; set; }
         public User Analist { get; set; }
+        #endregion
+
     }
 }

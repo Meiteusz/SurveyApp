@@ -16,5 +16,7 @@ namespace SurveyApp
             Helper.SetOwnerForm(new FormContentAnalist());
             Helper.ChangeForm(this, new FormSettings());
         }
+
+        private void btnSurveyManager_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormSurveyManager());
     }
 }

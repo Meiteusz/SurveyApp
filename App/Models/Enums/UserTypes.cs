@@ -3,7 +3,7 @@
     public enum UserTypes
     {
         Admin,
-        Analist,
+        Analyst,
         Operator
     }
 }

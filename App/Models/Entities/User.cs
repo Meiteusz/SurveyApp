@@ -19,10 +19,10 @@ namespace Models
         #region Constructors
         public User() { }
 
-        public User(string p_login, string p_password)
+        public User(string p_Login, string p_Password)
         {
-            Login = p_login;
-            Password = p_password;
+            Login = p_Login;
+            Password = p_Password;
         }
 
         public User(string p_Name, byte p_UserType, string p_Cpf, string p_Login, string p_Email, string p_Password)
@@ -51,18 +51,18 @@ namespace Models
                 if (LoggedUser != null)
                 {
                     response.Success = true;
-                    response.Messege = "User logged";
-                    response.GetData = LoggedUser;
+                    response.Message = "User logged";
+                    response.Data = LoggedUser;
                 }
                 else
                 {
-                    response.Messege = "User not finded";
+                    response.Message = "User not finded";
                 }
 
             }
             catch (Exception ex)
             {
-                response.Messege = ex.Message;
+                response.Message = ex.Message;
             }
             return response;
         }
@@ -79,12 +79,12 @@ namespace Models
                     context.SaveChanges();
 
                     response.Success = true;
-                    response.Messege = "User Registered succeffuly";
+                    response.Message = "User Registered succeffuly";
                 }
             }
             catch (Exception ex)
             {
-                response.Messege = ex.Message;
+                response.Message = ex.Message;
             }
             return response;
         }

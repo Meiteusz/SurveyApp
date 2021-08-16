@@ -2,6 +2,6 @@
 {
     public class ResponseData<T> : Response
     {
-        public T GetData { get; set; }
+        public T Data { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Controllers;
 using InjectionModules;
+using SurveyApp.ContentForms;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows.Forms;
 
 namespace SurveyApp.RegisterForms
 {
@@ -17,29 +19,26 @@ namespace SurveyApp.RegisterForms
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
         }
 
-        private void btnLocalImage_Click(object sender, System.EventArgs e)
+        private void btnRegister_Click(object sender, System.EventArgs e)
         {
-            SetLocalImage();
-        }
-        private void pbLocalImage_Click(object sender, System.EventArgs e)
-        {
-            SetLocalImage();
+            var survey = _surveyBLL.Create();
+            survey.OpeningDate = dtpOpeningDate.Value;
+            survey.Local = _surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data;
+            survey.Description = txtDescription.Text;
+            survey.Adress = txtAdress.Text;
+
+            var response = _surveyBLL.Insert(survey);
+
+            MessageBox.Show(response.Message);
         }
 
-        private void SetLocalImage()
+        private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormSurveyManager());
+
+        private void btnLocalImage_Click(object sender, System.EventArgs e)
         {
             ofdLocalImage.Filter = "JPEG Files(*.jpg)|*.jpg";
             ofdLocalImage.ShowDialog();
-            Bitmap bitmap = new Bitmap(ofdLocalImage.FileName);
-            pbLocalImage.Image = bitmap;
-
-            byte[] imagebyte;
-
-            using (var memoryStream = new MemoryStream())
-            {
-                bitmap.Save(memoryStream, ImageFormat.Png);
-                imagebyte = memoryStream.ToArray();
-            }
+            pbLocalImage.Image = Image.FromStream(new MemoryStream(_surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data));
         }
     }
 }

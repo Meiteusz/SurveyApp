@@ -1,5 +1,7 @@
 ﻿using Models;
 using Models.Entities.Interfaces;
+using Models.Enums;
+using System;
 
 namespace Controllers
 {
@@ -17,15 +19,22 @@ namespace Controllers
         public User Create(string Login, string Password) => new User(Login, Password);
 
         public User Create(string Name, byte UserType, string Cpf, string Login, string Email, string Password) => new User(Name, UserType, Cpf, Login, Email, Password);
-        
+
         public ResponseData<User> LoginUser(User user)
         {
-            return _User.LoginUser(user);
+            var userLogged = _User.LoginUser(user);
+
+            if (userLogged != null)
+                SettingUser.SetLoggedUser(userLogged.Data); //improving
+
+            return userLogged;
         }
 
         public Response Insert(User user)
         {
             return _User.Insert(user);
         }
+
+        public Array GetUserTypes() => Enum.GetValues(typeof(UserTypes));
     }
 }

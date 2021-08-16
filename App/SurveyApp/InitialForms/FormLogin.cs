@@ -34,17 +34,22 @@ namespace SurveyApp
 
             if (response.Success)
             {
-                SettingUser.SetLoggedUser(response.GetData);
-                byte userType = response.GetData.UserType;
-
-                if (userType.Equals(0)) // 0 = Admin
-                    Helper.ChangeForm(this, new FormContentAdmin());
-                else if (userType.Equals(1))
-                    Helper.ChangeForm(this, new FormContentAnalist());
-                else
-                    Helper.ChangeForm(this, new FormContentOperator());
+                byte userType = response.Data.UserType;
+                Helper.ChangeForm(this, OpenUserForm(userType));
             }
-            MessageBox.Show(response.Messege);
+            MessageBox.Show(response.Message);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e) => Application.Exit();
+
+        private Form OpenUserForm(byte userType)
+        {
+            if (userType.Equals(0)) // 0 = Admin
+                return new FormContentAdmin();
+            else if (userType.Equals(1))
+                return new FormContentAnalyst();
+            else
+                return new FormContentOperator();
         }
     }
 }

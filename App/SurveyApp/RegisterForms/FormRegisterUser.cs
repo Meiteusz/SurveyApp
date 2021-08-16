@@ -1,6 +1,5 @@
 ﻿using Controllers;
 using InjectionModules;
-using Models.Enums;
 using System;
 using System.Windows.Forms;
 
@@ -14,20 +13,23 @@ namespace SurveyApp.RegisterForms
         {
             InitializeComponent();
             _userBLL = new UserBLL(UserModule.ConfiguratingModule());
+            cbmUserTypes.DataSource = _userBLL.GetUserTypes();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, UserTypeVerifier(), txtCpf.Text, txtEmail.Text, txtLogin.Text, txtPassword.Text));
-
-            MessageBox.Show(response.Messege);
+            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, (byte)cbmUserTypes.SelectedIndex, txtCpf.Text, txtEmail.Text, txtLogin.Text, txtPassword.Text));
+            
+            MessageBox.Show(response.Message);
         }
+        private void btnBack_Click(object sender, EventArgs e) => Helper.ChangeForm(this, new FormContentAdmin());
 
-        private byte UserTypeVerifier()  //Clean later
+        private void btnPassword_Click(object sender, EventArgs e) 
         {
-            if (rbAnalist.Checked)
-                return ((byte)UserTypes.Analist);
-            return ((byte)UserTypes.Operator);
+            new FormPassword().ShowDialog();
+            txtPassword.Text = FormPassword.Password;
         }
+
+        private void cbShowHidePassword_CheckedChanged(object sender, EventArgs e) => Helper.ShowHidePassword(cbShowHidePassword, txtPassword);
     }
 }

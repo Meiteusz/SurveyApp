@@ -23,7 +23,7 @@ namespace Controllers.Tests
             var Login = "TestLogin";
             var Password = "TestPass";
             var User = _UserBLL.Create(Login, Password);
-            var DataUser = new ResponseData<User> { Success = true, GetData = User };
+            var DataUser = new ResponseData<User> { Success = true, Data = User };
             _UserBLL.LoginUser(User).Returns(DataUser);
 
 

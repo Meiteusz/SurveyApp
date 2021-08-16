@@ -13,6 +13,6 @@ namespace SurveyApp.ContentForms
             txtPassword.Text = SettingUser.LoggedUser.Password;
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, Helper.OwnerForm);
+        private void btnCancel_Click(object sender, System.EventArgs e) => Close();
     }
 }

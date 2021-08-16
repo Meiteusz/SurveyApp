@@ -1,4 +1,5 @@
 ﻿using Models;
+using System;
 
 namespace Controllers
 {
@@ -9,5 +10,6 @@ namespace Controllers
         User Create(string Name,  byte UserType, string Cpf, string Login, string Email, string Password);
         ResponseData<User> LoginUser(User user);
         Response Insert(User user);
+        Array GetUserTypes();
     }
 }

@@ -34,6 +34,7 @@ namespace SurveyApp
             this.cbShowHidePassword = new System.Windows.Forms.CheckBox();
             this.btnPassword = new System.Windows.Forms.Button();
             this.btnLogin = new MetroFramework.Controls.MetroButton();
+            this.btnExit = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // txtLogin
@@ -94,11 +95,27 @@ namespace SurveyApp
             this.btnLogin.UseSelectable = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.Location = new System.Drawing.Point(395, 199);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(122, 47);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseSelectable = true;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(589, 307);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.cbShowHidePassword);
@@ -120,6 +137,7 @@ namespace SurveyApp
         private System.Windows.Forms.CheckBox cbShowHidePassword;
         private System.Windows.Forms.Button btnPassword;
         private MetroFramework.Controls.MetroButton btnLogin;
+        private MetroFramework.Controls.MetroButton btnExit;
     }
 }
 

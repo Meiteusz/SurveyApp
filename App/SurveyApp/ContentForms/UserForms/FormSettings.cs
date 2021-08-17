@@ -8,9 +8,9 @@ namespace SurveyApp.ContentForms
         {
             InitializeComponent();
 
-            txtEmail.Text = SettingUser.LoggedUser.Email;
-            txtLogin.Text = SettingUser.LoggedUser.Login;
-            txtPassword.Text = SettingUser.LoggedUser.Password;
+            txtEmail.Text = UserSetting.LoggedUser.Email;
+            txtLogin.Text = UserSetting.LoggedUser.Login;
+            txtPassword.Text = UserSetting.LoggedUser.Password;
         }
 
         private void btnCancel_Click(object sender, System.EventArgs e) => Close();

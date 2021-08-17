@@ -21,7 +21,7 @@ namespace Controllers
 
         public Response Insert(Survey survey)
         {
-            survey.AnalistId = SettingUser.LoggedUser.Id;
+            survey.AnalistId = UserSetting.LoggedUser.Id;
             return _survey.Insert(survey);
         }
 
@@ -62,6 +62,11 @@ namespace Controllers
         public ResponseData<List<Survey>> GetAll()
         {
             return _survey.GetAll();
+        }
+
+        public ResponseData<Survey> GetById(Survey survey)
+        {
+            return _survey.GetById(survey);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Controllers
             var userLogged = _User.LoginUser(user);
 
             if (userLogged != null)
-                SettingUser.SetLoggedUser(userLogged.Data); //improving
+                UserSetting.SetLoggedUser(userLogged.Data); //improving
 
             return userLogged;
         }

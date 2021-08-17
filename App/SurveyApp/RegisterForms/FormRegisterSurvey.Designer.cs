@@ -117,7 +117,7 @@ namespace SurveyApp.RegisterForms
             this.btnLocalImage.Name = "btnLocalImage";
             this.btnLocalImage.Size = new System.Drawing.Size(228, 28);
             this.btnLocalImage.TabIndex = 11;
-            this.btnLocalImage.Text = "Open Image";
+            this.btnLocalImage.Text = "Upload  Image";
             this.btnLocalImage.UseSelectable = true;
             this.btnLocalImage.Click += new System.EventHandler(this.btnLocalImage_Click);
             // 

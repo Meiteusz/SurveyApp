@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections;
+using System.Windows.Forms;
 
 namespace SurveyApp
 {
@@ -26,6 +27,12 @@ namespace SurveyApp
                 txtPassword.UseSystemPasswordChar = true;
                 cb.Text = "Show Password";
             }
+        }
+
+        public static void LoadDataGrid(DataGridView dgv, IEnumerable dataList)
+        {
+            dgv.DataSource = dataList;
+            dgv.Columns["Id"].Visible = false;
         }
     }
 }

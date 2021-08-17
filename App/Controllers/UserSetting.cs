@@ -2,7 +2,7 @@
 
 namespace Controllers
 {
-    public abstract class SettingUser
+    public abstract class UserSetting
     {
         public static User LoggedUser { get; private set; }
 

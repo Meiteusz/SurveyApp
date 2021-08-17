@@ -42,7 +42,7 @@ namespace SurveyApp.ContentForms
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txtAnalist = new System.Windows.Forms.TextBox();
-            this.btnBack = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new MetroFramework.Controls.MetroButton();
             this.btnConfirm = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -73,8 +73,10 @@ namespace SurveyApp.ContentForms
             this.pbLocalImage.Location = new System.Drawing.Point(23, 187);
             this.pbLocalImage.Name = "pbLocalImage";
             this.pbLocalImage.Size = new System.Drawing.Size(218, 205);
+            this.pbLocalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLocalImage.TabIndex = 2;
             this.pbLocalImage.TabStop = false;
+            this.pbLocalImage.WaitOnLoad = true;
             // 
             // metroLabel2
             // 
@@ -158,15 +160,15 @@ namespace SurveyApp.ContentForms
             this.txtAnalist.Size = new System.Drawing.Size(231, 27);
             this.txtAnalist.TabIndex = 10;
             // 
-            // btnBack
+            // btnCancel
             // 
-            this.btnBack.Location = new System.Drawing.Point(23, 553);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(146, 59);
-            this.btnBack.TabIndex = 12;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseSelectable = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnCancel.Location = new System.Drawing.Point(23, 553);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(146, 59);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseSelectable = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnConfirm
             // 
@@ -213,7 +215,7 @@ namespace SurveyApp.ContentForms
             this.btnOpenImage.Name = "btnOpenImage";
             this.btnOpenImage.Size = new System.Drawing.Size(218, 30);
             this.btnOpenImage.TabIndex = 18;
-            this.btnOpenImage.Text = "Open Image";
+            this.btnOpenImage.Text = "Upload Image";
             this.btnOpenImage.UseSelectable = true;
             // 
             // FormViewSurvey
@@ -225,7 +227,7 @@ namespace SurveyApp.ContentForms
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.txtAnalist);
             this.Controls.Add(this.metroLabel5);
@@ -240,6 +242,7 @@ namespace SurveyApp.ContentForms
             this.Controls.Add(this.txtStatus);
             this.Name = "FormViewSurvey";
             this.Text = "Survey Details";
+            this.Load += new System.EventHandler(this.FormViewSurvey_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLocalImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -260,7 +263,7 @@ namespace SurveyApp.ContentForms
         private System.Windows.Forms.TextBox txtAdress;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.TextBox txtAnalist;
-        private MetroFramework.Controls.MetroButton btnBack;
+        private MetroFramework.Controls.MetroButton btnCancel;
         private MetroFramework.Controls.MetroButton btnConfirm;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;

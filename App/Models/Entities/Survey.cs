@@ -19,14 +19,14 @@ namespace Models
         public User Analist { get; set; }
         #endregion
 
-        public Response Insert(Survey survey)
+        public Response Insert(Survey p_survey)
         {
             Response response = new Response();
             try
             {
                 using (var context = new SurveyAppContext())
                 {
-                    context.Add(survey);
+                    context.Add(p_survey);
                     context.SaveChanges();
 
                     response.Success = true;
@@ -54,6 +54,29 @@ namespace Models
 
                     response.Success = true;
                     response.Data = surveysList;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public ResponseData<Survey> GetById(Survey p_survey)
+        {
+            ResponseData<Survey> response = new ResponseData<Survey>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var survey = context.Surveys.FirstOrDefault(s => s.Id.Equals(p_survey.Id));
+
+                    response.Success = true;
+                    response.Data = survey;
                 }
             }
             catch (Exception ex)

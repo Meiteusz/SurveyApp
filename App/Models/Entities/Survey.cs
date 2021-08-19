@@ -1,5 +1,7 @@
-﻿using Models.Entities.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Entities.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,6 +33,54 @@ namespace Models
 
                     response.Success = true;
                     response.Message = "Survey registered succeffully";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public Response Update(Survey p_survey)
+        {
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Entry(p_survey).State = EntityState.Modified;
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Survey updated succefully";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public Response Delete(Survey p_survey)
+        {
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Surveys.Remove(p_survey);
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Survey Deleted Succefully";
                 }
             }
             catch (Exception ex)

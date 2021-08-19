@@ -172,12 +172,14 @@ namespace SurveyApp.ContentForms
             // 
             // btnConfirm
             // 
+            this.btnConfirm.Enabled = false;
             this.btnConfirm.Location = new System.Drawing.Point(395, 553);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(146, 59);
             this.btnConfirm.TabIndex = 13;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseSelectable = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnDelete
             // 
@@ -193,6 +195,7 @@ namespace SurveyApp.ContentForms
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -207,6 +210,7 @@ namespace SurveyApp.ContentForms
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnOpenImage
             // 

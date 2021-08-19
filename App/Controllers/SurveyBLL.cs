@@ -35,7 +35,7 @@ namespace Controllers
                 Bitmap bitmap = new Bitmap(fileName);
 
                 response.Success = true;
-                response.Data = ConvertImageToByte(bitmap); 
+                response.Data = ConvertImageToByte(bitmap);
             }
             catch (Exception ex)
             {
@@ -58,6 +58,16 @@ namespace Controllers
             return imageByte;
         }
         #endregion
+
+        public Response Update(Survey survey)
+        {
+            return _survey.Update(survey);
+        }
+
+        public Response Delete(Survey survey)
+        {
+            return _survey.Delete(survey);
+        }
 
         public ResponseData<List<Survey>> GetAll()
         {

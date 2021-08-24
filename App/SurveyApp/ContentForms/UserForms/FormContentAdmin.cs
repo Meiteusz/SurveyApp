@@ -1,14 +1,23 @@
-﻿using SurveyApp.RegisterForms;
+﻿using Controllers;
+using InjectionModules;
+using SurveyApp.RegisterForms;
 using System;
-using System.Windows.Forms;
 
 namespace SurveyApp
 {
     public partial class FormContentAdmin : MetroFramework.Forms.MetroForm
     {
+        private readonly IUserBLL _userBLL;
+
         public FormContentAdmin()
         {
             InitializeComponent();
+            _userBLL = new UserBLL(UserModule.ConfiguratingModule());
+        }
+
+        private void FormContentAdmin_Load(object sender, EventArgs e)
+        {
+            Helper.LoadDataGrid(dgvUsers, _userBLL.GetAll().Data);
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)

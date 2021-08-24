@@ -6,7 +6,7 @@ namespace Controllers
     {
         public static Survey ActualSurvey { get; private set; }
 
-        public static void SetLoggedUser(Survey survey)
+        public static void SetActualSurvey(Survey survey)
         {
             ActualSurvey = survey;
         }

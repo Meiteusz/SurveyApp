@@ -23,7 +23,7 @@ namespace SurveyApp.ContentForms
         {
             var survey = _surveyBLL.Create();
             survey.Id = (int)dgvSurveys.CurrentRow.Cells[0].Value; //improving...
-            SurveySetting.SetLoggedUser(_surveyBLL.GetById(survey).Data);
+            SurveySetting.SetActualSurvey(_surveyBLL.GetById(survey).Data);
             new FormViewSurvey().ShowDialog();
         }
     }

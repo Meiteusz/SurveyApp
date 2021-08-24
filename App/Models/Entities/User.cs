@@ -1,5 +1,7 @@
-﻿using Models.Entities.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Entities.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Models
@@ -36,7 +38,7 @@ namespace Models
         }
         #endregion
 
-        public ResponseData<User> LoginUser(User user)
+        public ResponseData<User> LoginUser(User p_user)
         {
             ResponseData<User> response = new ResponseData<User>();
             User LoggedUser = new User();
@@ -45,7 +47,7 @@ namespace Models
             {
                 using (var context = new SurveyAppContext())
                 {
-                    LoggedUser = context.Users.SingleOrDefault(u => u.Login.Equals(user.Login) && u.Password.Equals(user.Password));
+                    LoggedUser = context.Users.SingleOrDefault(u => u.Login.Equals(p_user.Login) && u.Password.Equals(p_user.Password));
                 }
 
                 if (LoggedUser != null)
@@ -67,7 +69,7 @@ namespace Models
             return response;
         }
 
-        public Response Insert(User user)
+        public Response Insert(User p_user)
         {
             Response response = new Response();
 
@@ -75,7 +77,7 @@ namespace Models
             {
                 using (var context = new SurveyAppContext())
                 {
-                    context.Users.Add(user);
+                    context.Users.Add(p_user);
                     context.SaveChanges();
 
                     response.Success = true;
@@ -86,6 +88,53 @@ namespace Models
             {
                 response.Message = ex.Message;
             }
+            return response;
+        }
+
+        public Response Update(User p_user)
+        {
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Entry(p_user).State = EntityState.Modified;
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "User Updated";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public ResponseData<List<User>> GetAll()
+        {
+            ResponseData<List<User>> response = new ResponseData<List<User>>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var usersList = context.Users.ToList();
+
+                    response.Success = true;
+                    response.Data = usersList;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
             return response;
         }
     }

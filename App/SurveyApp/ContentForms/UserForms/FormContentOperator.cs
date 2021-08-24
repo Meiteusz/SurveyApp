@@ -1,4 +1,6 @@
-﻿namespace SurveyApp.ContentForms
+﻿using SurveyApp.ContentForms.OccurrenceForms;
+
+namespace SurveyApp.ContentForms
 {
     public partial class FormContentOperator : MetroFramework.Forms.MetroForm
     {
@@ -14,5 +16,7 @@
             Helper.SetOwnerForm(new FormContentOperator());
             new FormSettings().ShowDialog();
         }
+
+        private void btnOccurrenceManager_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormOccurrenceManager());
     }
 }

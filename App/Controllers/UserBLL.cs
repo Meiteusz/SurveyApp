@@ -2,6 +2,7 @@
 using Models.Entities.Interfaces;
 using Models.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace Controllers
 {
@@ -33,6 +34,16 @@ namespace Controllers
         public Response Insert(User user)
         {
             return _User.Insert(user);
+        }
+
+        public Response Update(User user)
+        {
+            return _User.Update(user);
+        }
+
+        public ResponseData<List<User>> GetAll()
+        {
+            return _User.GetAll();
         }
 
         public Array GetUserTypes() => Enum.GetValues(typeof(UserTypes));

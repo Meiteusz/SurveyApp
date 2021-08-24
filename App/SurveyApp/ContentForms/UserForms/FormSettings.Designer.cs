@@ -37,6 +37,7 @@ namespace SurveyApp.ContentForms
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btnConfirm = new MetroFramework.Controls.MetroButton();
             this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.cbShowHidePassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -80,6 +81,7 @@ namespace SurveyApp.ContentForms
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(266, 29);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // metroLabel1
             // 
@@ -93,17 +95,18 @@ namespace SurveyApp.ContentForms
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirm.Location = new System.Drawing.Point(247, 304);
+            this.btnConfirm.Location = new System.Drawing.Point(247, 316);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(156, 57);
             this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseSelectable = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancel.Location = new System.Drawing.Point(23, 304);
+            this.btnCancel.Location = new System.Drawing.Point(23, 316);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(156, 57);
             this.btnCancel.TabIndex = 8;
@@ -111,11 +114,26 @@ namespace SurveyApp.ContentForms
             this.btnCancel.UseSelectable = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // cbShowHidePassword
+            // 
+            this.cbShowHidePassword.AutoSize = true;
+            this.cbShowHidePassword.BackColor = System.Drawing.Color.Transparent;
+            this.cbShowHidePassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbShowHidePassword.ForeColor = System.Drawing.Color.Black;
+            this.cbShowHidePassword.Location = new System.Drawing.Point(295, 250);
+            this.cbShowHidePassword.Name = "cbShowHidePassword";
+            this.cbShowHidePassword.Size = new System.Drawing.Size(129, 24);
+            this.cbShowHidePassword.TabIndex = 9;
+            this.cbShowHidePassword.Text = "Show Password";
+            this.cbShowHidePassword.UseVisualStyleBackColor = false;
+            this.cbShowHidePassword.CheckedChanged += new System.EventHandler(this.cbShowHidePassword_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 384);
+            this.ClientSize = new System.Drawing.Size(430, 394);
+            this.Controls.Add(this.cbShowHidePassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.metroLabel1);
@@ -141,5 +159,6 @@ namespace SurveyApp.ContentForms
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton btnConfirm;
         private MetroFramework.Controls.MetroButton btnCancel;
+        private System.Windows.Forms.CheckBox cbShowHidePassword;
     }
 }

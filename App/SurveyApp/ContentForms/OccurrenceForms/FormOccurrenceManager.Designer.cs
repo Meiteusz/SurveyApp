@@ -1,7 +1,7 @@
 ﻿
-namespace SurveyApp.ContentForms
+namespace SurveyApp.ContentForms.OccurrenceForms
 {
-    partial class FormSurveyManager
+    partial class FormOccurrenceManager
     {
         /// <summary>
         /// Required designer variable.
@@ -32,29 +32,29 @@ namespace SurveyApp.ContentForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnRegisterSurvey = new MetroFramework.Controls.MetroButton();
-            this.dgvSurveys = new MetroFramework.Controls.MetroGrid();
             this.btnBack = new MetroFramework.Controls.MetroButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).BeginInit();
+            this.dgvOccurrence = new MetroFramework.Controls.MetroGrid();
+            this.btnRegisterOccurrence = new MetroFramework.Controls.MetroButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOccurrence)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnRegisterSurvey
+            // btnBack
             // 
-            this.btnRegisterSurvey.Location = new System.Drawing.Point(757, 80);
-            this.btnRegisterSurvey.Name = "btnRegisterSurvey";
-            this.btnRegisterSurvey.Size = new System.Drawing.Size(198, 65);
-            this.btnRegisterSurvey.TabIndex = 10;
-            this.btnRegisterSurvey.Text = "Register Survey";
-            this.btnRegisterSurvey.UseSelectable = true;
-            this.btnRegisterSurvey.Click += new System.EventHandler(this.btnRegisterSurvey_Click);
+            this.btnBack.Location = new System.Drawing.Point(757, 374);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(198, 65);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseSelectable = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // dgvSurveys
+            // dgvOccurrence
             // 
-            this.dgvSurveys.AllowUserToResizeRows = false;
-            this.dgvSurveys.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvSurveys.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSurveys.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvSurveys.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvOccurrence.AllowUserToResizeRows = false;
+            this.dgvOccurrence.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvOccurrence.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvOccurrence.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvOccurrence.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -62,8 +62,8 @@ namespace SurveyApp.ContentForms
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSurveys.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSurveys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOccurrence.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOccurrence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -71,13 +71,13 @@ namespace SurveyApp.ContentForms
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSurveys.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSurveys.EnableHeadersVisualStyles = false;
-            this.dgvSurveys.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvSurveys.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvSurveys.Location = new System.Drawing.Point(23, 80);
-            this.dgvSurveys.Name = "dgvSurveys";
-            this.dgvSurveys.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvOccurrence.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOccurrence.EnableHeadersVisualStyles = false;
+            this.dgvOccurrence.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvOccurrence.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvOccurrence.Location = new System.Drawing.Point(23, 80);
+            this.dgvOccurrence.Name = "dgvOccurrence";
+            this.dgvOccurrence.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -85,42 +85,44 @@ namespace SurveyApp.ContentForms
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSurveys.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvSurveys.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvSurveys.RowTemplate.Height = 25;
-            this.dgvSurveys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSurveys.Size = new System.Drawing.Size(715, 359);
-            this.dgvSurveys.TabIndex = 11;
-            this.dgvSurveys.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSurveys_CellDoubleClick);
+            this.dgvOccurrence.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOccurrence.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvOccurrence.RowTemplate.Height = 25;
+            this.dgvOccurrence.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOccurrence.Size = new System.Drawing.Size(715, 359);
+            this.dgvOccurrence.TabIndex = 14;
+            this.dgvOccurrence.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOccurrence_CellMouseDoubleClick);
             // 
-            // btnBack
+            // btnRegisterOccurrence
             // 
-            this.btnBack.Location = new System.Drawing.Point(757, 374);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(198, 65);
-            this.btnBack.TabIndex = 12;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseSelectable = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnRegisterOccurrence.Location = new System.Drawing.Point(757, 80);
+            this.btnRegisterOccurrence.Name = "btnRegisterOccurrence";
+            this.btnRegisterOccurrence.Size = new System.Drawing.Size(198, 65);
+            this.btnRegisterOccurrence.TabIndex = 13;
+            this.btnRegisterOccurrence.Text = "Register Occurrence";
+            this.btnRegisterOccurrence.UseSelectable = true;
+            this.btnRegisterOccurrence.Click += new System.EventHandler(this.btnRegisterOccurrence_Click);
             // 
-            // FormSurveyManager
+            // FormOccurrenceManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 518);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dgvSurveys);
-            this.Controls.Add(this.btnRegisterSurvey);
-            this.Name = "FormSurveyManager";
-            this.Text = "Survey Manager";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).EndInit();
+            this.Controls.Add(this.dgvOccurrence);
+            this.Controls.Add(this.btnRegisterOccurrence);
+            this.Name = "FormOccurrenceManager";
+            this.Text = "Occurrence Manager";
+            this.Load += new System.EventHandler(this.FormOccurrenceManager_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOccurrence)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton btnRegisterSurvey;
-        private MetroFramework.Controls.MetroGrid dgvSurveys;
+
         private MetroFramework.Controls.MetroButton btnBack;
+        private MetroFramework.Controls.MetroGrid dgvOccurrence;
+        private MetroFramework.Controls.MetroButton btnRegisterOccurrence;
     }
 }

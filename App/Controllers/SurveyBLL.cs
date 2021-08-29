@@ -1,5 +1,6 @@
 ﻿using Models;
 using Models.Entities.Interfaces;
+using Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,6 +19,8 @@ namespace Controllers
         }
 
         public Survey Create() => new Survey();
+
+        public Array GetSurveyStatus() => Enum.GetValues(typeof(SurveyStatus));
 
         public Response Insert(Survey survey)
         {
@@ -69,7 +72,7 @@ namespace Controllers
             return _survey.Delete(survey);
         }
 
-        public ResponseData<List<Survey>> GetAll()
+        public ResponseData<IEnumerable<dynamic>> GetAll()
         {
             return _survey.GetAll();
         }
@@ -78,5 +81,11 @@ namespace Controllers
         {
             return _survey.GetById(survey);
         }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(int p_status, string p_responsible, DateTime p_dateFrom, DateTime p_dateTo, string p_adress)
+        {
+            return _survey.GetByFilters(p_status, p_responsible, p_dateFrom, p_dateTo, p_adress);
+        }
+
     }
 }

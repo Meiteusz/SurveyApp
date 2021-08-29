@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Models.Entities.Interfaces;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,7 +10,7 @@ namespace Models
     {
         #region Properties
         public int Id { get; set; }
-        public byte Status { get; set; }
+        public int Status { get; set; }
         public DateTime OpeningDate { get; set; }
         public byte[] Local { get; set; }
         public string Description { get; set; }
@@ -92,15 +91,18 @@ namespace Models
             return response;
         }
 
-        public ResponseData<List<Survey>> GetAll()
+        public ResponseData<IEnumerable<dynamic>> GetAll()
         {
-            ResponseData<List<Survey>> response = new ResponseData<List<Survey>>();
+            ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
 
             try
             {
                 using (var context = new SurveyAppContext())
                 {
-                    var surveysList = context.Surveys.ToList();
+                    var surveysList = (from s in context.Set<Survey>()
+                                      join u in context.Set<User>()
+                                          on s.AnalistId equals u.Id
+                                      select new { s.Id, s.Status, s.OpeningDate, s.Description, s.Adress, u.Name }).ToList();
 
                     response.Success = true;
                     response.Data = surveysList;
@@ -123,10 +125,39 @@ namespace Models
             {
                 using (var context = new SurveyAppContext())
                 {
+
+
                     var survey = context.Surveys.FirstOrDefault(s => s.Id.Equals(p_survey.Id));
 
                     response.Success = true;
                     response.Data = survey;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(int p_status, string p_responsible, DateTime p_dateFrom, DateTime p_dateTo, string p_adress)
+        {
+            ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var surveysList = (from s in context.Set<Survey>()
+                                       join u in context.Set<User>()
+                                           on s.AnalistId equals u.Id
+                                       select new { s.Id, s.Status, s.OpeningDate, s.Description, s.Adress, u.Name }).Where(s => s.Status.Equals(p_status) 
+                                       && s.OpeningDate >= p_dateFrom && s.OpeningDate <= p_dateTo && s.Adress.Contains(p_adress)).Where(u => u.Name.Contains(p_responsible)).ToList();
+
+                    response.Success = true;
+                    response.Data = surveysList;
                 }
             }
             catch (Exception ex)

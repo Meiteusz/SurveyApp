@@ -2,6 +2,7 @@
 {
     public enum SurveyStatus
     {
-        Done
+        Opened,
+        Closed
     }
 }

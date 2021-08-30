@@ -16,18 +16,43 @@ namespace Models
         public Survey Survey { get; set; }
         #endregion
 
-        public ResponseData<Occurrence> GetById(Occurrence p_Occurrence)
+        public Response Insert(Occurrence p_Occurrence)
         {
-            ResponseData<Occurrence> response = new ResponseData<Occurrence>();
+            Response response = new Response();
 
             try
             {
                 using (var context = new SurveyAppContext())
                 {
-                    var occurrence = context.Occurrences.FirstOrDefault(o => o.Id.Equals(p_Occurrence.Id));
+                    context.Occurrences.Add(p_Occurrence);
+                    context.SaveChanges();
 
                     response.Success = true;
-                    response.Data = occurrence;
+                    response.Message = "Occurrence registered succefully";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public Response Delete(Occurrence p_Occurrence)
+        {
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Occurrences.Remove(p_Occurrence);
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Occurrence deleted succefully";
                 }
             }
             catch (Exception ex)
@@ -62,19 +87,18 @@ namespace Models
             return response;
         }
 
-        public Response Delete(Occurrence p_Occurrence)
+        public ResponseData<Occurrence> GetById(Occurrence p_Occurrence)
         {
-            Response response = new Response();
+            ResponseData<Occurrence> response = new ResponseData<Occurrence>();
 
             try
             {
                 using (var context = new SurveyAppContext())
                 {
-                    context.Occurrences.Remove(p_Occurrence);
-                    context.SaveChanges();
+                    var occurrence = context.Occurrences.FirstOrDefault(o => o.Id.Equals(p_Occurrence.Id));
 
                     response.Success = true;
-                    response.Message = "Occurrence deleted succefully";
+                    response.Data = occurrence;
                 }
             }
             catch (Exception ex)
@@ -84,6 +108,11 @@ namespace Models
             }
 
             return response;
+        }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters()
+        {
+            throw new NotImplementedException();
         }
     }
 }

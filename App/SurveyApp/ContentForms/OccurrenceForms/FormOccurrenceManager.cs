@@ -20,7 +20,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             Helper.LoadDataGrid(dgvOccurrence, _occurrenceBLL.GetAll().Data);
         }
 
-        private void btnRegisterOccurrence_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterOccurrence());
+        private void btnRegisterOccurrence_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterOccurrenceViewSurvey());
 
         private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentOperator());
 
@@ -30,6 +30,11 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             occurrence.Id = (int)dgvOccurrence.CurrentRow.Cells[0].Value; //improving...
             OccurrenceSetting.SetctualOccurrence(_occurrenceBLL.GetById(occurrence).Data);
             new FormViewOccurrence().ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

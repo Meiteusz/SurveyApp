@@ -1,6 +1,8 @@
 ﻿using Controllers.Interfaces;
 using Models;
 using Models.Entities.Interfaces;
+using Models.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace Controllers
@@ -16,9 +18,16 @@ namespace Controllers
 
         public Occurrence Create() => new Occurrence();
 
-        public ResponseData<Occurrence> GetById(Occurrence occurrence)
+        public Array GetOccurrenceTypes() => Enum.GetValues(typeof(OccurrenceType));
+
+        public Response Insert(Occurrence p_Occurrence)
         {
-            return _occurrence.GetById(occurrence);
+            return _occurrence.Insert(p_Occurrence);
+        }
+
+        public Response Delete(Occurrence occurrence)
+        {
+            return _occurrence.Delete(occurrence);
         }
 
         public ResponseData<List<Occurrence>> GetAll()
@@ -26,9 +35,14 @@ namespace Controllers
             return _occurrence.GetAll();
         }
 
-        public Response Delete(Occurrence occurrence)
+        public ResponseData<Occurrence> GetById(Occurrence occurrence)
         {
-            return _occurrence.Delete(occurrence);
+            return _occurrence.GetById(occurrence);
+        }
+
+        public ResponseData<IEnumerable<dynamic>> GetByFilters()
+        {
+            return _occurrence.GetByFilters();
         }
     }
 }

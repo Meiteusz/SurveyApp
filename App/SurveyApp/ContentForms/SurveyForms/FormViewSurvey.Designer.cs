@@ -47,6 +47,7 @@ namespace SurveyApp.ContentForms
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnOpenImage = new MetroFramework.Controls.MetroButton();
+            this.ofdLocalImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbLocalImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,6 +222,11 @@ namespace SurveyApp.ContentForms
             this.btnOpenImage.TabIndex = 18;
             this.btnOpenImage.Text = "Upload Image";
             this.btnOpenImage.UseSelectable = true;
+            this.btnOpenImage.Click += new System.EventHandler(this.btnOpenImage_Click);
+            // 
+            // ofdLocalImage
+            // 
+            this.ofdLocalImage.FileName = "openFileDialog1";
             // 
             // FormViewSurvey
             // 
@@ -272,5 +278,6 @@ namespace SurveyApp.ContentForms
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private MetroFramework.Controls.MetroButton btnOpenImage;
+        private System.Windows.Forms.OpenFileDialog ofdLocalImage;
     }
 }

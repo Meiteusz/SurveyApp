@@ -14,7 +14,7 @@ namespace SurveyApp
         {
             InitializeComponent();
             _userBLL = new UserBLL(UserModule.ConfiguratingModule());
-            txtLogin.Text = "teste";
+            txtLogin.Text = "apagar";
             txtPassword.Text = "123";
         }
 

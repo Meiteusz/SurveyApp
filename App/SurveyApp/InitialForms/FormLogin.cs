@@ -30,7 +30,7 @@ namespace SurveyApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var response = _userBLL.LoginUser(_userBLL.Create(txtLogin.Text, txtPassword.Text));
+            var response = _userBLL.LoginUser(_userBLL.Create(txtLogin.Text, _userBLL.EncryptPassword(txtPassword.Text).Data));
 
             if (response.Success)
             {

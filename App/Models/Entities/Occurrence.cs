@@ -64,15 +64,33 @@ namespace Models
             return response;
         }
 
-        public ResponseData<List<Occurrence>> GetAll()
+        public ResponseData<IEnumerable<dynamic>> GetAll()
         {
-            ResponseData<List<Occurrence>> response = new ResponseData<List<Occurrence>>();
+            ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
 
             try
             {
                 using (var context = new SurveyAppContext())
                 {
-                    var occurrencesList = context.Occurrences.ToList();
+                    var occurrencesList = (from o in context.Set<Occurrence>()
+                                           join s in context.Set<Survey>()
+                                           on o.SurveyId equals s.Id
+                                           join u in context.Set<User>()
+                                           on s.AnalistId equals u.Id
+                                           select new
+                                           {
+                                               Id = o.Id,
+                                               Date = o.Date,
+                                               Type = o.Type,
+                                               OccurrenceDescription = o.Description,
+                                               Status = s.Status,
+                                               SurveyDescription = s.Description,
+                                               Adress = s.Adress,
+                                               OpeningSurveyDate = s.OpeningDate,
+                                               SurveyResponsible = u.Name
+                                           }).ToList();
+
+
 
                     response.Success = true;
                     response.Data = occurrencesList;

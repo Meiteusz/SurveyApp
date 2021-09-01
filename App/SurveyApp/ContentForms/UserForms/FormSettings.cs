@@ -15,7 +15,7 @@ namespace SurveyApp.ContentForms
 
             txtEmail.Text = UserSetting.LoggedUser.Email;
             txtLogin.Text = UserSetting.LoggedUser.Login;
-            txtPassword.Text = UserSetting.LoggedUser.Password;
+            txtPassword.Text = _userBLL.DecryptPassword(UserSetting.LoggedUser.Password).Data;
         }
 
         private void btnCancel_Click(object sender, System.EventArgs e) => Close();
@@ -27,7 +27,7 @@ namespace SurveyApp.ContentForms
                 var user = UserSetting.LoggedUser;
                 user.Email = txtEmail.Text;
                 user.Login = txtLogin.Text;
-                user.Password = txtPassword.Text;
+                user.Password = _userBLL.EncryptPassword(txtPassword.Text).Data;
                 var response = _userBLL.Update(user);
                 MessageBox.Show(response.Message);
             }

@@ -10,7 +10,7 @@ namespace Controllers.Interfaces
         Array GetOccurrenceTypes();
         Response Insert(Occurrence p_Occurrence);
         Response Delete(Occurrence occurrence);
-        ResponseData<List<Occurrence>> GetAll();
+        ResponseData<IEnumerable<dynamic>> GetAll();
         ResponseData<Occurrence> GetById(Occurrence occurrence);
         ResponseData<IEnumerable<dynamic>> GetByFilters();
     }

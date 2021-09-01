@@ -30,7 +30,7 @@ namespace Controllers
             return _occurrence.Delete(occurrence);
         }
 
-        public ResponseData<List<Occurrence>> GetAll()
+        public ResponseData<IEnumerable<dynamic>> GetAll()
         {
             return _occurrence.GetAll();
         }

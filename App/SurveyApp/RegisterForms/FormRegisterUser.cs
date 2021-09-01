@@ -18,7 +18,7 @@ namespace SurveyApp.RegisterForms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, (byte)cbmUserTypes.SelectedIndex, txtCpf.Text, txtEmail.Text, txtLogin.Text, txtPassword.Text));
+            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, (byte)cbmUserTypes.SelectedIndex, txtCpf.Text, txtLogin.Text, txtEmail.Text, _userBLL.EncryptPassword(txtPassword.Text).Data));
             
             MessageBox.Show(response.Message);
         }

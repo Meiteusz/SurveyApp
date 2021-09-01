@@ -40,20 +40,20 @@ namespace SurveyApp
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLogin.Location = new System.Drawing.Point(218, 60);
+            this.txtLogin.Location = new System.Drawing.Point(51, 60);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.PlaceholderText = "Login";
-            this.txtLogin.Size = new System.Drawing.Size(298, 27);
+            this.txtLogin.Size = new System.Drawing.Size(217, 27);
             this.txtLogin.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Enabled = false;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(218, 121);
+            this.txtPassword.Location = new System.Drawing.Point(51, 121);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(244, 27);
+            this.txtPassword.Size = new System.Drawing.Size(164, 27);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -63,7 +63,7 @@ namespace SurveyApp
             this.cbShowHidePassword.BackColor = System.Drawing.Color.Transparent;
             this.cbShowHidePassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbShowHidePassword.ForeColor = System.Drawing.Color.Black;
-            this.cbShowHidePassword.Location = new System.Drawing.Point(387, 154);
+            this.cbShowHidePassword.Location = new System.Drawing.Point(139, 154);
             this.cbShowHidePassword.Name = "cbShowHidePassword";
             this.cbShowHidePassword.Size = new System.Drawing.Size(129, 24);
             this.cbShowHidePassword.TabIndex = 5;
@@ -76,7 +76,7 @@ namespace SurveyApp
             this.btnPassword.BackColor = System.Drawing.Color.Red;
             this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPassword.Location = new System.Drawing.Point(462, 120);
+            this.btnPassword.Location = new System.Drawing.Point(213, 120);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(55, 29);
             this.btnPassword.TabIndex = 6;
@@ -87,7 +87,7 @@ namespace SurveyApp
             // 
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnLogin.Location = new System.Drawing.Point(218, 199);
+            this.btnLogin.Location = new System.Drawing.Point(93, 199);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(122, 47);
             this.btnLogin.TabIndex = 7;
@@ -101,9 +101,9 @@ namespace SurveyApp
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Location = new System.Drawing.Point(395, 199);
+            this.btnExit.Location = new System.Drawing.Point(473, 239);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(122, 47);
+            this.btnExit.Size = new System.Drawing.Size(59, 28);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.UseSelectable = true;
@@ -114,7 +114,7 @@ namespace SurveyApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 307);
+            this.ClientSize = new System.Drawing.Size(540, 273);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnPassword);

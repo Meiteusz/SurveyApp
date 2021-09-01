@@ -100,9 +100,17 @@ namespace Models
                 using (var context = new SurveyAppContext())
                 {
                     var surveysList = (from s in context.Set<Survey>()
-                                      join u in context.Set<User>()
-                                          on s.AnalistId equals u.Id
-                                      select new { s.Id, s.Status, s.OpeningDate, s.Description, s.Adress, u.Name }).ToList();
+                                       join u in context.Set<User>()
+                                       on s.AnalistId equals u.Id
+                                       select new
+                                       {
+                                           Id = s.Id,
+                                           Status = s.Status,
+                                           OpeningDate = s.OpeningDate,
+                                           Description = s.Description,
+                                           Adress = s.Adress,
+                                           ResponsibleName = u.Name
+                                       }).ToList();
 
                     response.Success = true;
                     response.Data = surveysList;
@@ -153,8 +161,16 @@ namespace Models
                     var surveysList = (from s in context.Set<Survey>()
                                        join u in context.Set<User>()
                                            on s.AnalistId equals u.Id
-                                       select new { s.Id, s.Status, s.OpeningDate, s.Description, s.Adress, u.Name }).Where(s => s.Status.Equals(p_status) 
-                                       && s.OpeningDate >= p_dateFrom && s.OpeningDate <= p_dateTo && s.Adress.Contains(p_adress)).Where(u => u.Name.Contains(p_responsible)).ToList();
+                                       select new
+                                       {
+                                           Id = s.Id,
+                                           Status = s.Status,
+                                           OpeningDate = s.OpeningDate,
+                                           Description = s.Description,
+                                           Adress = s.Adress,
+                                           ResponsibleName = u.Name
+                                       }).Where(s => s.Status.Equals(p_status) && s.OpeningDate >= p_dateFrom && s.OpeningDate <= p_dateTo && s.Adress.Contains(p_adress)
+                                        ).Where(u => u.ResponsibleName.Contains(p_responsible)).ToList();
 
                     response.Success = true;
                     response.Data = surveysList;

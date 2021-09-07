@@ -29,90 +29,204 @@ namespace SurveyApp.ContentForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLogout = new MetroFramework.Controls.MetroButton();
-            this.btnSettings = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContentOperator));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnOccurrenceManager = new MetroFramework.Controls.MetroButton();
+            this.btnOccurrenceManager = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.lblName);
+            this.panel2.Controls.Add(this.btnLogout);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lblUserType);
+            this.panel2.Controls.Add(this.btnSettings);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1094, 108);
+            this.panel2.TabIndex = 8;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(96, 30);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(121, 23);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "User Name";
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(23, 456);
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogout.Location = new System.Drawing.Point(944, 52);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(219, 63);
-            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Size = new System.Drawing.Size(150, 55);
+            this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Logout";
-            this.btnLogout.UseSelectable = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SurveyApp.Properties.Resources.user__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUserType.ForeColor = System.Drawing.Color.White;
+            this.lblUserType.Location = new System.Drawing.Point(96, 60);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(82, 18);
+            this.lblUserType.TabIndex = 7;
+            this.lblUserType.Text = "User Type";
             // 
             // btnSettings
             // 
-            this.btnSettings.Image = global::SurveyApp.Properties.Resources.settings;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(23, 375);
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSettings.Location = new System.Drawing.Point(944, 0);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(219, 63);
-            this.btnSettings.TabIndex = 5;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseSelectable = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(94, 44);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 25);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Operator";
+            this.btnSettings.Size = new System.Drawing.Size(150, 48);
+            this.btnSettings.TabIndex = 7;
+            this.btnSettings.Text = "Settings  ";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click_1);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.btnOccurrenceManager);
-            this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Controls.Add(this.btnSettings);
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Location = new System.Drawing.Point(0, 5);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Location = new System.Drawing.Point(0, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 542);
-            this.panel1.TabIndex = 8;
+            this.panel1.Size = new System.Drawing.Size(299, 517);
+            this.panel1.TabIndex = 9;
             // 
             // btnOccurrenceManager
             // 
-            this.btnOccurrenceManager.Image = global::SurveyApp.Properties.Resources.settings;
-            this.btnOccurrenceManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOccurrenceManager.Location = new System.Drawing.Point(23, 109);
+            this.btnOccurrenceManager.BackColor = System.Drawing.Color.Gray;
+            this.btnOccurrenceManager.FlatAppearance.BorderSize = 0;
+            this.btnOccurrenceManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOccurrenceManager.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnOccurrenceManager.ForeColor = System.Drawing.Color.White;
+            this.btnOccurrenceManager.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOccurrenceManager.Location = new System.Drawing.Point(0, 214);
             this.btnOccurrenceManager.Name = "btnOccurrenceManager";
-            this.btnOccurrenceManager.Size = new System.Drawing.Size(219, 63);
-            this.btnOccurrenceManager.TabIndex = 7;
-            this.btnOccurrenceManager.Text = "Occurrence Manager";
-            this.btnOccurrenceManager.UseSelectable = true;
-            this.btnOccurrenceManager.Click += new System.EventHandler(this.btnOccurrenceManager_Click);
+            this.btnOccurrenceManager.Size = new System.Drawing.Size(299, 76);
+            this.btnOccurrenceManager.TabIndex = 9;
+            this.btnOccurrenceManager.Text = "Occurrences Manager";
+            this.btnOccurrenceManager.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOccurrenceManager.UseVisualStyleBackColor = false;
+            this.btnOccurrenceManager.Click += new System.EventHandler(this.btnOccurrenceManager_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(83, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 129);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Location = new System.Drawing.Point(580, 188);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(102, 144);
+            this.panel7.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(31, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 45);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "0";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel5.Location = new System.Drawing.Point(386, 188);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(296, 144);
+            this.panel5.TabIndex = 12;
             // 
             // FormContentOperator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 547);
+            this.ClientSize = new System.Drawing.Size(1094, 624);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "FormContentOperator";
+            this.Load += new System.EventHandler(this.FormContentOperator_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton btnLogout;
-        private MetroFramework.Controls.MetroButton btnSettings;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroButton btnOccurrenceManager;
+        private System.Windows.Forms.Button btnOccurrenceManager;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

@@ -24,7 +24,7 @@ namespace SurveyApp.ContentForms
             txtStatus.Text = SurveySetting.ActualSurvey.Status.ToString();
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e) => Close();
+        private void btnCancel_Click_1(object sender, System.EventArgs e) => Close();
 
         private void btnUpdate_Click(object sender, System.EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace SurveyApp.ContentForms
             btnConfirm.Enabled = true;
         }
 
-        private void btnConfirm_Click(object sender, System.EventArgs e)
+        private void btnConfirm_Click_1(object sender, System.EventArgs e)
         {
             var surveyUpdated = SurveySetting.ActualSurvey;
             surveyUpdated.Adress = txtAdress.Text;

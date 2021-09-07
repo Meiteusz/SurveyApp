@@ -117,12 +117,28 @@ namespace Controllers
 
         public Response Insert(User user)
         {
-            return _User.Insert(user);
+            Response response = user.UserValidate();
+
+            if (response.Success)
+            {
+                user.Password = EncryptPassword(user.Password).Data;
+                return _User.Insert(user);
+            }
+            else
+                return response;
         }
 
         public Response Update(User user)
         {
-            return _User.Update(user);
+            Response response = user.UserValidate();
+
+            if (response.Success)
+            {
+                user.Password = EncryptPassword(user.Password).Data;
+                return _User.Update(user);
+            }
+            else
+                return response;
         }
 
         public ResponseData<List<User>> GetAll()
@@ -131,5 +147,7 @@ namespace Controllers
         }
 
         public Array GetUserTypes() => Enum.GetValues(typeof(UserTypes));
+
+        public string GetNameOfUserType(byte userType) => Enum.GetName(typeof(UserTypes), userType);
     }
 }

@@ -32,7 +32,7 @@ namespace SurveyApp.RegisterForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnBack = new MetroFramework.Controls.MetroButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegisterOccurrenceViewSurvey));
             this.dgvSurveys = new MetroFramework.Controls.MetroGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,21 +46,12 @@ namespace SurveyApp.RegisterForms
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.dtpDateFrom = new MetroFramework.Controls.MetroDateTime();
             this.dtpDateTo = new MetroFramework.Controls.MetroDateTime();
-            this.btnSearch = new MetroFramework.Controls.MetroButton();
-            this.btnRegisterOccurrence = new MetroFramework.Controls.MetroButton();
+            this.btnRegisterOccurrence = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(83, 101);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(117, 46);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseSelectable = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvSurveys
             // 
@@ -89,7 +80,7 @@ namespace SurveyApp.RegisterForms
             this.dgvSurveys.EnableHeadersVisualStyles = false;
             this.dgvSurveys.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvSurveys.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvSurveys.Location = new System.Drawing.Point(83, 295);
+            this.dgvSurveys.Location = new System.Drawing.Point(338, 255);
             this.dgvSurveys.Name = "dgvSurveys";
             this.dgvSurveys.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -103,7 +94,7 @@ namespace SurveyApp.RegisterForms
             this.dgvSurveys.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSurveys.RowTemplate.Height = 25;
             this.dgvSurveys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSurveys.Size = new System.Drawing.Size(932, 296);
+            this.dgvSurveys.Size = new System.Drawing.Size(705, 334);
             this.dgvSurveys.TabIndex = 0;
             this.dgvSurveys.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSurveys_CellMouseDoubleClick);
             // 
@@ -119,7 +110,8 @@ namespace SurveyApp.RegisterForms
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(190)))));
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -130,58 +122,63 @@ namespace SurveyApp.RegisterForms
             this.panel1.Controls.Add(this.txtAdress);
             this.panel1.Controls.Add(this.dtpDateFrom);
             this.panel1.Controls.Add(this.dtpDateTo);
-            this.panel1.Location = new System.Drawing.Point(83, 153);
+            this.panel1.Location = new System.Drawing.Point(338, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 136);
+            this.panel1.Size = new System.Drawing.Size(705, 134);
             this.panel1.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(747, 7);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(487, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 17);
+            this.label5.Size = new System.Drawing.Size(25, 20);
             this.label5.TabIndex = 28;
             this.label5.Text = "To";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(499, 74);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(341, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
+            this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 27;
             this.label4.Text = "Adress";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(499, 7);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(342, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 17);
+            this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 26;
             this.label3.Text = "From";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(26, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "Responsible";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(26, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 17);
+            this.label6.Size = new System.Drawing.Size(49, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Status";
             // 
@@ -191,7 +188,7 @@ namespace SurveyApp.RegisterForms
             this.cmbStatus.ItemHeight = 23;
             this.cmbStatus.Location = new System.Drawing.Point(26, 27);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(413, 29);
+            this.cmbStatus.Size = new System.Drawing.Size(276, 29);
             this.cmbStatus.TabIndex = 13;
             this.cmbStatus.UseSelectable = true;
             // 
@@ -200,54 +197,70 @@ namespace SurveyApp.RegisterForms
             this.txtResponsible.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtResponsible.Location = new System.Drawing.Point(26, 94);
             this.txtResponsible.Name = "txtResponsible";
-            this.txtResponsible.Size = new System.Drawing.Size(413, 27);
+            this.txtResponsible.Size = new System.Drawing.Size(276, 27);
             this.txtResponsible.TabIndex = 15;
             // 
             // txtAdress
             // 
             this.txtAdress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAdress.Location = new System.Drawing.Point(499, 94);
+            this.txtAdress.Location = new System.Drawing.Point(341, 94);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(415, 27);
+            this.txtAdress.Size = new System.Drawing.Size(346, 27);
             this.txtAdress.TabIndex = 21;
             // 
             // dtpDateFrom
             // 
             this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFrom.Location = new System.Drawing.Point(499, 27);
+            this.dtpDateFrom.Location = new System.Drawing.Point(342, 27);
             this.dtpDateFrom.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDateFrom.Name = "dtpDateFrom";
-            this.dtpDateFrom.Size = new System.Drawing.Size(167, 29);
+            this.dtpDateFrom.Size = new System.Drawing.Size(117, 29);
             this.dtpDateFrom.TabIndex = 17;
             // 
             // dtpDateTo
             // 
             this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTo.Location = new System.Drawing.Point(747, 27);
+            this.dtpDateTo.Location = new System.Drawing.Point(487, 27);
             this.dtpDateTo.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDateTo.Name = "dtpDateTo";
-            this.dtpDateTo.Size = new System.Drawing.Size(167, 29);
+            this.dtpDateTo.Size = new System.Drawing.Size(117, 29);
             this.dtpDateTo.TabIndex = 19;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(216, 101);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(117, 46);
-            this.btnSearch.TabIndex = 26;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseSelectable = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRegisterOccurrence
             // 
-            this.btnRegisterOccurrence.Location = new System.Drawing.Point(349, 101);
+            this.btnRegisterOccurrence.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegisterOccurrence.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegisterOccurrence.Location = new System.Drawing.Point(63, 255);
             this.btnRegisterOccurrence.Name = "btnRegisterOccurrence";
-            this.btnRegisterOccurrence.Size = new System.Drawing.Size(117, 46);
-            this.btnRegisterOccurrence.TabIndex = 27;
+            this.btnRegisterOccurrence.Size = new System.Drawing.Size(193, 78);
+            this.btnRegisterOccurrence.TabIndex = 29;
             this.btnRegisterOccurrence.Text = "Register Occurrence";
-            this.btnRegisterOccurrence.UseSelectable = true;
-            this.btnRegisterOccurrence.Click += new System.EventHandler(this.btnRegisterOccurrence_Click);
+            this.btnRegisterOccurrence.UseVisualStyleBackColor = true;
+            this.btnRegisterOccurrence.Click += new System.EventHandler(this.btnRegisterOccurrence_Click_1);
+            // 
+            // btnBack
+            // 
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Image = global::SurveyApp.Properties.Resources.back;
+            this.btnBack.Location = new System.Drawing.Point(63, 511);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(193, 78);
+            this.btnBack.TabIndex = 28;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(620, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(85, 44);
+            this.btnSearch.TabIndex = 30;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // FormRegisterOccurrenceViewSurvey
             // 
@@ -255,11 +268,10 @@ namespace SurveyApp.RegisterForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 624);
             this.Controls.Add(this.btnRegisterOccurrence);
-            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSurveys);
-            this.Controls.Add(this.btnBack);
             this.Name = "FormRegisterOccurrenceViewSurvey";
             this.Text = "Register Occurrence";
             this.Load += new System.EventHandler(this.FormRegisterOccurrence_Load);
@@ -272,8 +284,6 @@ namespace SurveyApp.RegisterForms
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroButton btnBack;
         private MetroFramework.Controls.MetroGrid dgvSurveys;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -287,7 +297,8 @@ namespace SurveyApp.RegisterForms
         private System.Windows.Forms.TextBox txtAdress;
         private MetroFramework.Controls.MetroDateTime dtpDateFrom;
         private MetroFramework.Controls.MetroDateTime dtpDateTo;
-        private MetroFramework.Controls.MetroButton btnSearch;
-        private MetroFramework.Controls.MetroButton btnRegisterOccurrence;
+        private System.Windows.Forms.Button btnRegisterOccurrence;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

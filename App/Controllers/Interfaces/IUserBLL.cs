@@ -16,5 +16,6 @@ namespace Controllers
         Response Update(User user);
         ResponseData<List<User>> GetAll();
         Array GetUserTypes();
+        public string GetNameOfUserType(byte userType);
     }
 }

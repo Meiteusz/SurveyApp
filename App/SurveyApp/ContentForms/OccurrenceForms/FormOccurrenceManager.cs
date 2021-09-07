@@ -20,9 +20,9 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             Helper.LoadDataGrid(dgvOccurrence, _occurrenceBLL.GetAll().Data);
         }
 
-        private void btnRegisterOccurrence_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterOccurrenceViewSurvey());
+        private void btnRegisterOccurrence_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterOccurrenceViewSurvey());
 
-        private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentOperator());
+        private void btnBack_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentOperator());
 
         private void dgvOccurrence_CellMouseDoubleClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e)
         {

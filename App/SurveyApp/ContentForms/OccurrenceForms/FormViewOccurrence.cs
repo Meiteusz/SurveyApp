@@ -13,19 +13,23 @@ namespace SurveyApp.ContentForms.OccurrenceForms
         {
             InitializeComponent();
             _occurrenceBLL = new OccurrenceBLL(OccurrenceModule.ConfiguratingModule());
-
-            cmbType.DataSource = _occurrenceBLL.GetOccurrenceTypes();
         }
 
         private void FormViewOccurrence_Load(object sender, System.EventArgs e)
         {
+            cmbType.DataSource = _occurrenceBLL.GetOccurrenceTypes();
             dtpDate.Value = OccurrenceSetting.ActualOccurrence.Date;
             cmbType.SelectedIndex = OccurrenceSetting.ActualOccurrence.Type;
             txtDescription.Text = OccurrenceSetting.ActualOccurrence.Description;
             txtSurvey.Text = OccurrenceSetting.ActualOccurrence.SurveyId.ToString();
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e) => Close();
+        private void btnCancel_Click_1(object sender, System.EventArgs e) => Close();
+
+        private void btnConfirm_Click(object sender, System.EventArgs e)
+        {
+
+        }
 
         private void btnUpdate_Click(object sender, System.EventArgs e)
         {

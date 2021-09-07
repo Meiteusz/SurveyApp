@@ -2,7 +2,6 @@
 using InjectionModules;
 using SurveyApp.ContentForms;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -19,7 +18,7 @@ namespace SurveyApp.RegisterForms
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
         }
 
-        private void btnRegister_Click(object sender, System.EventArgs e)
+        private void btnRegister_Click_1(object sender, System.EventArgs e)
         {
             var survey = _surveyBLL.Create();
             survey.OpeningDate = dtpOpeningDate.Value;
@@ -32,7 +31,7 @@ namespace SurveyApp.RegisterForms
             MessageBox.Show(response.Message);
         }
 
-        private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormSurveyManager());
+        private void btnBack_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormSurveyManager());
 
         private void btnLocalImage_Click(object sender, System.EventArgs e)
         {

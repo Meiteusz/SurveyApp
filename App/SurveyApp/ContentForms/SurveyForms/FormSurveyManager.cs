@@ -12,11 +12,17 @@ namespace SurveyApp.ContentForms
         {
             InitializeComponent();
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
-            Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
-            cmbStatus.DataSource = _surveyBLL.GetSurveyStatus();
         }
 
-        private void btnRegisterSurvey_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterSurvey());
+        private void FormSurveyManager_Load(object sender, System.EventArgs e)
+        {
+            Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
+            cmbStatus.DataSource = _surveyBLL.GetSurveyStatus();
+
+            dgvSurveys.Columns[3].Width = 300;
+        }
+
+        private void btnRegisterSurvey_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterSurvey());
 
         private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentAnalyst());
 
@@ -28,9 +34,12 @@ namespace SurveyApp.ContentForms
             new FormViewSurvey().ShowDialog();
         }
 
-        private void btnSearch_Click(object sender, System.EventArgs e)
-        {
+        private void btnSearch_Click_1(object sender, System.EventArgs e) =>
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetByFilters(cmbStatus.SelectedIndex, txtResponsible.Text, dtpDateFrom.Value, dtpDateTo.Value, txtAdress.Text).Data);
+
+        private void btnBack_Click_1(object sender, System.EventArgs e)
+        {
+            Helper.ChangeForm(this, new FormContentAnalyst());
         }
     }
 }

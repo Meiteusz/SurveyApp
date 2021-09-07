@@ -1,5 +1,6 @@
 ﻿using Controllers;
 using InjectionModules;
+using SurveyApp.ContentForms.UserForms;
 using System;
 using System.Windows.Forms;
 
@@ -13,16 +14,20 @@ namespace SurveyApp.RegisterForms
         {
             InitializeComponent();
             _userBLL = new UserBLL(UserModule.ConfiguratingModule());
+        }
+
+        private void FormRegisterUser_Load(object sender, EventArgs e)
+        {
             cbmUserTypes.DataSource = _userBLL.GetUserTypes();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, (byte)cbmUserTypes.SelectedIndex, txtCpf.Text, txtLogin.Text, txtEmail.Text, _userBLL.EncryptPassword(txtPassword.Text).Data));
+            var response = _userBLL.Insert(_userBLL.Create(txtName.Text, (byte)cbmUserTypes.SelectedIndex, txtCpf.Text, txtLogin.Text, txtEmail.Text, txtPassword.Text));
             
             MessageBox.Show(response.Message);
         }
-        private void btnBack_Click(object sender, EventArgs e) => Helper.ChangeForm(this, new FormContentAdmin());
+        private void btnBack_Click(object sender, EventArgs e) => Helper.ChangeForm(this, new FormUserManager());
 
         private void btnPassword_Click(object sender, EventArgs e) 
         {

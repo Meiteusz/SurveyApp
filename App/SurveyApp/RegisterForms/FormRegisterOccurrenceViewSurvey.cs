@@ -20,8 +20,6 @@ namespace SurveyApp.RegisterForms
 
         private void FormRegisterOccurrence_Load(object sender, System.EventArgs e) => Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
 
-        private void btnBack_Click(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormOccurrenceManager());
-
         private void dgvSurveys_CellMouseDoubleClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e) 
         {
             var survey = _surveyBLL.Create();
@@ -30,11 +28,11 @@ namespace SurveyApp.RegisterForms
             new FormRegisterOccurrence().ShowDialog();
         }
 
-        private void btnRegisterOccurrence_Click(object sender, System.EventArgs e) => new FormRegisterOccurrence().ShowDialog();
+        private void btnRegisterOccurrence_Click_1(object sender, System.EventArgs e) => new FormRegisterOccurrence().ShowDialog();
 
-        private void btnSearch_Click(object sender, System.EventArgs e)
-        {
+        private void btnSearch_Click_1(object sender, System.EventArgs e) =>
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetByFilters(cmbStatus.SelectedIndex, txtResponsible.Text, dtpDateFrom.Value, dtpDateTo.Value, txtAdress.Text).Data);
-        }
+
+        private void btnBack_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormOccurrenceManager());
     }
 }

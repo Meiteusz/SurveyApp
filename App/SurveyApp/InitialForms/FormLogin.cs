@@ -13,22 +13,22 @@ namespace SurveyApp
         public FormLogin()
         {
             InitializeComponent();
+
             _userBLL = new UserBLL(UserModule.ConfiguratingModule());
-            txtLogin.Text = "apagar";
-            txtPassword.Text = "123";
         }
 
         private void cbShowHidePassword_CheckedChanged(object sender, EventArgs e)
         {
             Helper.ShowHidePassword(cbShowHidePassword, txtPassword);
         }
+
         private void btnPassword_Click(object sender, EventArgs e)
         {
             new FormPassword().ShowDialog();
             txtPassword.Text = FormPassword.Password;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             var response = _userBLL.LoginUser(_userBLL.Create(txtLogin.Text, _userBLL.EncryptPassword(txtPassword.Text).Data));
 
@@ -40,7 +40,7 @@ namespace SurveyApp
             MessageBox.Show(response.Message);
         }
 
-        private void btnExit_Click(object sender, EventArgs e) => Application.Exit();
+        private void btnExit_Click_1(object sender, EventArgs e) => Application.Exit();
 
         private Form OpenUserForm(byte userType)
         {

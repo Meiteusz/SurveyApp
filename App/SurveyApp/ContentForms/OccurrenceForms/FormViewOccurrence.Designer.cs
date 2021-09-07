@@ -40,8 +40,8 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnConfirm = new MetroFramework.Controls.MetroButton();
-            this.btnCancel = new MetroFramework.Controls.MetroButton();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dtpDate
@@ -104,7 +104,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // 
             this.txtSurvey.Enabled = false;
             this.txtSurvey.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSurvey.Location = new System.Drawing.Point(31, 457);
+            this.txtSurvey.Location = new System.Drawing.Point(29, 442);
             this.txtSurvey.Name = "txtSurvey";
             this.txtSurvey.Size = new System.Drawing.Size(341, 27);
             this.txtSurvey.TabIndex = 6;
@@ -112,7 +112,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(29, 435);
+            this.metroLabel4.Location = new System.Drawing.Point(27, 420);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(48, 19);
             this.metroLabel4.TabIndex = 7;
@@ -120,6 +120,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
@@ -130,7 +131,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
@@ -149,25 +150,27 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Enabled = false;
-            this.btnConfirm.Location = new System.Drawing.Point(391, 557);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(146, 59);
-            this.btnConfirm.TabIndex = 21;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseSelectable = true;
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(31, 557);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(27, 552);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(146, 59);
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseSelectable = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Size = new System.Drawing.Size(154, 64);
+            this.btnCancel.TabIndex = 27;
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.Location = new System.Drawing.Point(383, 552);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(154, 64);
+            this.btnConfirm.TabIndex = 28;
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormViewOccurrence
             // 
@@ -206,7 +209,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private MetroFramework.Controls.MetroButton btnConfirm;
-        private MetroFramework.Controls.MetroButton btnCancel;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

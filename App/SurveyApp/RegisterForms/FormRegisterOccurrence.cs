@@ -13,18 +13,16 @@ namespace SurveyApp.RegisterForms
         {
             InitializeComponent();
             _occurrenceBLL = new OccurrenceBLL(OccurrenceModule.ConfiguratingModule());
-            cmbType.DataSource = _occurrenceBLL.GetOccurrenceTypes();
         }
 
         private void FormRegisterOccurrence_Load(object sender, System.EventArgs e)
         {
+            cmbType.DataSource = _occurrenceBLL.GetOccurrenceTypes();
             txtSurveyResponsible.Text = SurveySetting.ActualSurvey.AnalistId.ToString();
             txtSurveyAdress.Text = SurveySetting.ActualSurvey.Adress;
         }
 
-        private void btnCancel_Click(object sender, System.EventArgs e) => Close();
-
-        private void btnRegister_Click(object sender, System.EventArgs e)
+        private void btnRegister_Click_1(object sender, System.EventArgs e)
         {
             var occurrence = _occurrenceBLL.Create();
             occurrence.Type = (byte)cmbType.SelectedIndex; //Improving
@@ -36,5 +34,7 @@ namespace SurveyApp.RegisterForms
 
             MessageBox.Show(response.Message);
         }
+
+        private void btnCancel_Click_1(object sender, System.EventArgs e) => Close();
     }
 }

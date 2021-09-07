@@ -15,7 +15,6 @@ namespace Models
         public byte[] Local { get; set; }
         public string Description { get; set; }
         public string Adress { get; set; }
-        public ICollection<Occurrence> OccurrenceList { get; set; }
         public int AnalistId { get; set; }
         public User Analist { get; set; }
         #endregion

@@ -35,14 +35,14 @@ namespace Controllers
             return _occurrence.GetAll();
         }
 
-        public ResponseData<Occurrence> GetById(Occurrence occurrence)
+        public ResponseData<Occurrence> GetById(int p_Id)
         {
-            return _occurrence.GetById(occurrence);
+            return _occurrence.GetById(p_Id);
         }
 
-        public ResponseData<IEnumerable<dynamic>> GetByFilters()
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible)
         {
-            return _occurrence.GetByFilters();
+            return _occurrence.GetByFilters(type, dateFrom, dateTo, description, surveyResponsible);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Controllers.Interfaces
         Response Insert(Occurrence p_Occurrence);
         Response Delete(Occurrence occurrence);
         ResponseData<IEnumerable<dynamic>> GetAll();
-        ResponseData<Occurrence> GetById(Occurrence occurrence);
-        ResponseData<IEnumerable<dynamic>> GetByFilters();
+        ResponseData<Occurrence> GetById(int p_Id);
+        ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible);
     }
 }

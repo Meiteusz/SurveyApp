@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Models.Entities.Interfaces
 {
@@ -7,7 +8,7 @@ namespace Models.Entities.Interfaces
         Response Insert(Occurrence p_Occurrence);
         Response Delete(Occurrence p_Occurrence);
         ResponseData<IEnumerable<dynamic>> GetAll();
-        ResponseData<Occurrence> GetById(Occurrence p_Occurrence);
-        ResponseData<IEnumerable<dynamic>> GetByFilters();
+        ResponseData<Occurrence> GetById(int p_Id);
+        ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible);
     }
 }

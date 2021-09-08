@@ -36,18 +36,22 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
-            this.txtSurvey = new System.Windows.Forms.TextBox();
+            this.txtSurveyResponsible = new System.Windows.Forms.TextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtSurveyAdress = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpDate
             // 
             this.dtpDate.Enabled = false;
-            this.dtpDate.Location = new System.Drawing.Point(31, 152);
+            this.dtpDate.Location = new System.Drawing.Point(27, 321);
             this.dtpDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(230, 29);
@@ -56,7 +60,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(31, 130);
+            this.metroLabel1.Location = new System.Drawing.Point(27, 299);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(36, 19);
             this.metroLabel1.TabIndex = 1;
@@ -67,7 +71,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.cmbType.Enabled = false;
             this.cmbType.FormattingEnabled = true;
             this.cmbType.ItemHeight = 23;
-            this.cmbType.Location = new System.Drawing.Point(288, 152);
+            this.cmbType.Location = new System.Drawing.Point(284, 321);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(249, 29);
             this.cmbType.TabIndex = 2;
@@ -76,7 +80,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(288, 130);
+            this.metroLabel2.Location = new System.Drawing.Point(284, 299);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(36, 19);
             this.metroLabel2.TabIndex = 3;
@@ -85,7 +89,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(29, 242);
+            this.metroLabel3.Location = new System.Drawing.Point(25, 378);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(74, 19);
             this.metroLabel3.TabIndex = 4;
@@ -94,29 +98,29 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // txtDescription
             // 
             this.txtDescription.Enabled = false;
-            this.txtDescription.Location = new System.Drawing.Point(29, 264);
+            this.txtDescription.Location = new System.Drawing.Point(25, 400);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(341, 101);
+            this.txtDescription.Size = new System.Drawing.Size(508, 101);
             this.txtDescription.TabIndex = 5;
             this.txtDescription.Text = "";
             // 
-            // txtSurvey
+            // txtSurveyResponsible
             // 
-            this.txtSurvey.Enabled = false;
-            this.txtSurvey.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSurvey.Location = new System.Drawing.Point(29, 442);
-            this.txtSurvey.Name = "txtSurvey";
-            this.txtSurvey.Size = new System.Drawing.Size(341, 27);
-            this.txtSurvey.TabIndex = 6;
+            this.txtSurveyResponsible.Enabled = false;
+            this.txtSurveyResponsible.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurveyResponsible.Location = new System.Drawing.Point(22, 61);
+            this.txtSurveyResponsible.Name = "txtSurveyResponsible";
+            this.txtSurveyResponsible.Size = new System.Drawing.Size(464, 27);
+            this.txtSurveyResponsible.TabIndex = 6;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(27, 420);
+            this.metroLabel4.Location = new System.Drawing.Point(22, 39);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(78, 19);
             this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "Survey";
+            this.metroLabel4.Text = "Responsible";
             // 
             // btnUpdate
             // 
@@ -172,17 +176,47 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.metroLabel5);
+            this.groupBox1.Controls.Add(this.txtSurveyAdress);
+            this.groupBox1.Controls.Add(this.metroLabel4);
+            this.groupBox1.Controls.Add(this.txtSurveyResponsible);
+            this.groupBox1.Location = new System.Drawing.Point(27, 96);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(510, 177);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Survey";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(22, 106);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel5.TabIndex = 9;
+            this.metroLabel5.Text = "Adress";
+            // 
+            // txtSurveyAdress
+            // 
+            this.txtSurveyAdress.Enabled = false;
+            this.txtSurveyAdress.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurveyAdress.Location = new System.Drawing.Point(22, 128);
+            this.txtSurveyAdress.Name = "txtSurveyAdress";
+            this.txtSurveyAdress.Size = new System.Drawing.Size(464, 27);
+            this.txtSurveyAdress.TabIndex = 8;
+            // 
             // FormViewOccurrence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 640);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.txtSurvey);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -192,6 +226,8 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.Name = "FormViewOccurrence";
             this.Text = "Occurrence Details";
             this.Load += new System.EventHandler(this.FormViewOccurrence_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,11 +241,14 @@ namespace SurveyApp.ContentForms.OccurrenceForms
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.RichTextBox txtDescription;
-        private System.Windows.Forms.TextBox txtSurvey;
+        private System.Windows.Forms.TextBox txtSurveyResponsible;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.TextBox txtSurveyAdress;
     }
 }

@@ -17,9 +17,8 @@ namespace SurveyApp.ContentForms
         private void FormSurveyManager_Load(object sender, System.EventArgs e)
         {
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
+            ResizeColumns();
             cmbStatus.DataSource = _surveyBLL.GetSurveyStatus();
-
-            dgvSurveys.Columns[3].Width = 300;
         }
 
         private void btnRegisterSurvey_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormRegisterSurvey());
@@ -28,18 +27,19 @@ namespace SurveyApp.ContentForms
 
         private void dgvSurveys_CellDoubleClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
-            var survey = _surveyBLL.Create();
-            survey.Id = (int)dgvSurveys.CurrentRow.Cells[0].Value; //improving...
-            SurveySetting.SetActualSurvey(_surveyBLL.GetById(survey).Data);
+            SurveySetting.SetActualSurvey(_surveyBLL.GetById((int)dgvSurveys.CurrentRow.Cells[0].Value).Data);
             new FormViewSurvey().ShowDialog();
         }
 
         private void btnSearch_Click_1(object sender, System.EventArgs e) =>
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetByFilters(cmbStatus.SelectedIndex, txtResponsible.Text, dtpDateFrom.Value, dtpDateTo.Value, txtAdress.Text).Data);
 
-        private void btnBack_Click_1(object sender, System.EventArgs e)
+        private void btnBack_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentAnalyst());
+
+        private void ResizeColumns()
         {
-            Helper.ChangeForm(this, new FormContentAnalyst());
+            for (int i = 0; i < dgvSurveys.Columns.Count; i++)
+                dgvSurveys.Columns[i].Width = 173;
         }
     }
 }

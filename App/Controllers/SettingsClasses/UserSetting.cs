@@ -10,5 +10,12 @@ namespace Controllers
         {
             LoggedUser = user;
         }
+
+        public static User ActualUser { get; private set; }
+
+        public static void SetActualUser(User user)
+        {
+            ActualUser = user;
+        }
     }
 }

@@ -22,9 +22,7 @@ namespace SurveyApp.RegisterForms
 
         private void dgvSurveys_CellMouseDoubleClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e) 
         {
-            var survey = _surveyBLL.Create();
-            survey.Id = (int)dgvSurveys.CurrentRow.Cells[0].Value;
-            SurveySetting.SetActualSurvey(_surveyBLL.GetById(survey).Data);
+            SurveySetting.SetActualSurvey(_surveyBLL.GetById((int)dgvSurveys.CurrentRow.Cells[0].Value).Data);
             new FormRegisterOccurrence().ShowDialog();
         }
 

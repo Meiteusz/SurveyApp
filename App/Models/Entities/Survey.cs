@@ -124,7 +124,7 @@ namespace Models
             return response;
         }
 
-        public ResponseData<Survey> GetById(Survey p_survey)
+        public ResponseData<Survey> GetById(int p_SurveyId)
         {
             ResponseData<Survey> response = new ResponseData<Survey>();
 
@@ -134,7 +134,7 @@ namespace Models
                 {
 
 
-                    var survey = context.Surveys.FirstOrDefault(s => s.Id.Equals(p_survey.Id));
+                    var survey = context.Surveys.FirstOrDefault(s => s.Id.Equals(p_SurveyId));
 
                     response.Success = true;
                     response.Data = survey;
@@ -159,7 +159,7 @@ namespace Models
                 {
                     var surveysList = (from s in context.Set<Survey>()
                                        join u in context.Set<User>()
-                                           on s.AnalistId equals u.Id
+                                       on s.AnalistId equals u.Id
                                        select new
                                        {
                                            Id = s.Id,

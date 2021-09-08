@@ -34,6 +34,10 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvOccurrence = new MetroFramework.Controls.MetroGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSurveyResponsible = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDateTo = new MetroFramework.Controls.MetroDateTime();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +62,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.dgvOccurrence.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -67,7 +71,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.dgvOccurrence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -78,17 +82,18 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.dgvOccurrence.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvOccurrence.Location = new System.Drawing.Point(83, 251);
             this.dgvOccurrence.Name = "dgvOccurrence";
+            this.dgvOccurrence.ReadOnly = true;
             this.dgvOccurrence.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOccurrence.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOccurrence.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvOccurrence.RowTemplate.Height = 25;
+            this.dgvOccurrence.RowTemplate.Height = 45;
             this.dgvOccurrence.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOccurrence.Size = new System.Drawing.Size(922, 330);
             this.dgvOccurrence.TabIndex = 14;
@@ -97,23 +102,67 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtSurveyResponsible);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtDescription);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.dtpDateTo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpDateFrom);
             this.panel1.Controls.Add(this.cmbType);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(83, 126);
+            this.panel1.Location = new System.Drawing.Point(83, 91);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 119);
+            this.panel1.Size = new System.Drawing.Size(926, 154);
             this.panel1.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(341, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 20);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Survey Responsible";
+            // 
+            // txtSurveyResponsible
+            // 
+            this.txtSurveyResponsible.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSurveyResponsible.Location = new System.Drawing.Point(341, 119);
+            this.txtSurveyResponsible.Name = "txtSurveyResponsible";
+            this.txtSurveyResponsible.Size = new System.Drawing.Size(546, 27);
+            this.txtSurveyResponsible.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(341, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Description";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescription.Location = new System.Drawing.Point(341, 32);
+            this.txtDescription.MaxLength = 250;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(546, 55);
+            this.txtDescription.TabIndex = 30;
+            this.txtDescription.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(726, 20);
+            this.label3.Location = new System.Drawing.Point(193, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 20);
             this.label3.TabIndex = 29;
@@ -122,7 +171,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // dtpDateTo
             // 
             this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTo.Location = new System.Drawing.Point(726, 40);
+            this.dtpDateTo.Location = new System.Drawing.Point(193, 116);
             this.dtpDateTo.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDateTo.Name = "dtpDateTo";
             this.dtpDateTo.Size = new System.Drawing.Size(117, 29);
@@ -133,7 +182,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(555, 20);
+            this.label2.Location = new System.Drawing.Point(46, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 27;
@@ -142,7 +191,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // dtpDateFrom
             // 
             this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFrom.Location = new System.Drawing.Point(555, 40);
+            this.dtpDateFrom.Location = new System.Drawing.Point(46, 116);
             this.dtpDateFrom.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.Size = new System.Drawing.Size(117, 29);
@@ -152,9 +201,9 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             // 
             this.cmbType.FormattingEnabled = true;
             this.cmbType.ItemHeight = 23;
-            this.cmbType.Location = new System.Drawing.Point(84, 40);
+            this.cmbType.Location = new System.Drawing.Point(45, 32);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(246, 29);
+            this.cmbType.Size = new System.Drawing.Size(264, 29);
             this.cmbType.TabIndex = 25;
             this.cmbType.UseSelectable = true;
             // 
@@ -163,7 +212,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(84, 20);
+            this.label1.Location = new System.Drawing.Point(45, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 24;
@@ -179,6 +228,7 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             this.btnSearch.Size = new System.Drawing.Size(159, 62);
             this.btnSearch.TabIndex = 27;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // btnBack
             // 
@@ -248,5 +298,9 @@ namespace SurveyApp.ContentForms.OccurrenceForms
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnRegisterOccurrence;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSurveyResponsible;
     }
 }

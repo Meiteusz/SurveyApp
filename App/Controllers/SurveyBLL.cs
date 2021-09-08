@@ -77,9 +77,9 @@ namespace Controllers
             return _survey.GetAll();
         }
 
-        public ResponseData<Survey> GetById(Survey survey)
+        public ResponseData<Survey> GetById(int p_SurveyId)
         {
-            return _survey.GetById(survey);
+            return _survey.GetById(p_SurveyId);
         }
 
         public ResponseData<IEnumerable<dynamic>> GetByFilters(int p_status, string p_responsible, DateTime p_dateFrom, DateTime p_dateTo, string p_adress)

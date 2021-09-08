@@ -146,6 +146,11 @@ namespace Controllers
             return _User.GetAll();
         }
 
+        public ResponseData<User> GetById(int p_Id)
+        {
+            return _User.GetById(p_Id);
+        }
+
         public Array GetUserTypes() => Enum.GetValues(typeof(UserTypes));
 
         public string GetNameOfUserType(byte userType) => Enum.GetName(typeof(UserTypes), userType);

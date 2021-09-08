@@ -137,5 +137,30 @@ namespace Models
 
             return response;
         }
+
+        public ResponseData<User> GetById(int p_Id)
+        {
+            ResponseData<User> response = new ResponseData<User>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+
+
+                    var survey = context.Users.FirstOrDefault(u => u.Id.Equals(p_Id));
+
+                    response.Success = true;
+                    response.Data = survey;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
     }
 }

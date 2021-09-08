@@ -90,8 +90,6 @@ namespace Models
                                                SurveyResponsible = u.Name
                                            }).ToList();
 
-
-
                     response.Success = true;
                     response.Data = occurrencesList;
                 }
@@ -105,7 +103,7 @@ namespace Models
             return response;
         }
 
-        public ResponseData<Occurrence> GetById(Occurrence p_Occurrence)
+        public ResponseData<Occurrence> GetById(int p_Id)
         {
             ResponseData<Occurrence> response = new ResponseData<Occurrence>();
 
@@ -113,7 +111,7 @@ namespace Models
             {
                 using (var context = new SurveyAppContext())
                 {
-                    var occurrence = context.Occurrences.FirstOrDefault(o => o.Id.Equals(p_Occurrence.Id));
+                    var occurrence = context.Occurrences.FirstOrDefault(o => o.Id.Equals(p_Id));
 
                     response.Success = true;
                     response.Data = occurrence;
@@ -128,9 +126,44 @@ namespace Models
             return response;
         }
 
-        public ResponseData<IEnumerable<dynamic>> GetByFilters()
+        public ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible)
         {
-            throw new NotImplementedException();
+            ResponseData<IEnumerable<dynamic>> response = new ResponseData<IEnumerable<dynamic>>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var occurrencesList = (from o in context.Set<Occurrence>()
+                                           join s in context.Set<Survey>()
+                                           on o.SurveyId equals s.Id
+                                           join u in context.Set<User>()
+                                           on s.AnalistId equals u.Id
+                                           select new
+                                           {
+                                               Id = o.Id,
+                                               Date = o.Date,
+                                               Type = o.Type,
+                                               OccurrenceDescription = o.Description,
+                                               Status = s.Status,
+                                               SurveyDescription = s.Description,
+                                               Adress = s.Adress,
+                                               OpeningSurveyDate = s.OpeningDate,
+                                               SurveyResponsible = u.Name
+                                           }).Where(o => o.Type.Equals(type) && o.Date >= dateFrom && o.Date <= dateTo && o.OccurrenceDescription.Contains(description) && 
+                                           o.SurveyResponsible.Contains(surveyResponsible)).ToList();
+
+                    response.Data = occurrencesList;
+                    response.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
         }
     }
 }

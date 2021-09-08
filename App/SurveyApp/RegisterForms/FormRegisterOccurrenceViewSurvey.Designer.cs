@@ -36,6 +36,7 @@ namespace SurveyApp.RegisterForms
             this.dgvSurveys = new MetroFramework.Controls.MetroGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,9 +49,10 @@ namespace SurveyApp.RegisterForms
             this.dtpDateTo = new MetroFramework.Controls.MetroDateTime();
             this.btnRegisterOccurrence = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvSurveys
@@ -80,7 +82,7 @@ namespace SurveyApp.RegisterForms
             this.dgvSurveys.EnableHeadersVisualStyles = false;
             this.dgvSurveys.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvSurveys.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvSurveys.Location = new System.Drawing.Point(338, 255);
+            this.dgvSurveys.Location = new System.Drawing.Point(81, 237);
             this.dgvSurveys.Name = "dgvSurveys";
             this.dgvSurveys.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -94,7 +96,7 @@ namespace SurveyApp.RegisterForms
             this.dgvSurveys.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSurveys.RowTemplate.Height = 25;
             this.dgvSurveys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSurveys.Size = new System.Drawing.Size(705, 334);
+            this.dgvSurveys.Size = new System.Drawing.Size(926, 352);
             this.dgvSurveys.TabIndex = 0;
             this.dgvSurveys.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSurveys_CellMouseDoubleClick);
             // 
@@ -102,7 +104,8 @@ namespace SurveyApp.RegisterForms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(257, 32);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(770, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 17);
             this.label1.TabIndex = 2;
@@ -110,8 +113,7 @@ namespace SurveyApp.RegisterForms
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(190)))));
-            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -122,10 +124,23 @@ namespace SurveyApp.RegisterForms
             this.panel1.Controls.Add(this.txtAdress);
             this.panel1.Controls.Add(this.dtpDateFrom);
             this.panel1.Controls.Add(this.dtpDateTo);
-            this.panel1.Location = new System.Drawing.Point(338, 94);
+            this.panel1.Location = new System.Drawing.Point(82, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(705, 134);
+            this.panel1.Size = new System.Drawing.Size(926, 136);
             this.panel1.TabIndex = 25;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(240, 0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(159, 62);
+            this.btnSearch.TabIndex = 30;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // label5
             // 
@@ -228,49 +243,48 @@ namespace SurveyApp.RegisterForms
             // 
             // btnRegisterOccurrence
             // 
+            this.btnRegisterOccurrence.BackColor = System.Drawing.Color.White;
             this.btnRegisterOccurrence.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterOccurrence.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegisterOccurrence.Location = new System.Drawing.Point(63, 255);
+            this.btnRegisterOccurrence.Image = global::SurveyApp.Properties.Resources.plus__1_2;
+            this.btnRegisterOccurrence.Location = new System.Drawing.Point(398, 0);
             this.btnRegisterOccurrence.Name = "btnRegisterOccurrence";
-            this.btnRegisterOccurrence.Size = new System.Drawing.Size(193, 78);
+            this.btnRegisterOccurrence.Size = new System.Drawing.Size(159, 62);
             this.btnRegisterOccurrence.TabIndex = 29;
-            this.btnRegisterOccurrence.Text = "Register Occurrence";
-            this.btnRegisterOccurrence.UseVisualStyleBackColor = true;
+            this.btnRegisterOccurrence.UseVisualStyleBackColor = false;
             this.btnRegisterOccurrence.Click += new System.EventHandler(this.btnRegisterOccurrence_Click_1);
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.Color.White;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Image = global::SurveyApp.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(63, 511);
+            this.btnBack.Location = new System.Drawing.Point(82, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(193, 78);
+            this.btnBack.Size = new System.Drawing.Size(159, 62);
             this.btnBack.TabIndex = 28;
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
-            // btnSearch
+            // panel2
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(620, 0);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(85, 44);
-            this.btnSearch.TabIndex = 30;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.btnBack);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnRegisterOccurrence);
+            this.panel2.Location = new System.Drawing.Point(-1, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1095, 62);
+            this.panel2.TabIndex = 34;
             // 
             // FormRegisterOccurrenceViewSurvey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 624);
-            this.Controls.Add(this.btnRegisterOccurrence);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSurveys);
             this.Name = "FormRegisterOccurrenceViewSurvey";
             this.Text = "Register Occurrence";
@@ -278,8 +292,9 @@ namespace SurveyApp.RegisterForms
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -300,5 +315,6 @@ namespace SurveyApp.RegisterForms
         private System.Windows.Forms.Button btnRegisterOccurrence;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel panel2;
     }
 }

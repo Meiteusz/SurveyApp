@@ -15,6 +15,7 @@ namespace Controllers
         Response Insert(User user);
         Response Update(User user);
         ResponseData<List<User>> GetAll();
+        public ResponseData<User> GetById(int p_Id);
         Array GetUserTypes();
         public string GetNameOfUserType(byte userType);
     }

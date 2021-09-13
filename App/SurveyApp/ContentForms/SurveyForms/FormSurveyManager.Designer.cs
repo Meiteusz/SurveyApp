@@ -49,6 +49,8 @@ namespace SurveyApp.ContentForms
             this.btnBack = new System.Windows.Forms.Button();
             this.btnRegisterSurvey = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.sfdExportExcel = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -224,7 +226,7 @@ namespace SurveyApp.ContentForms
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(242, 0);
+            this.btnSearch.Location = new System.Drawing.Point(533, 0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(159, 62);
             this.btnSearch.TabIndex = 26;
@@ -249,7 +251,7 @@ namespace SurveyApp.ContentForms
             this.btnRegisterSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegisterSurvey.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRegisterSurvey.Image = global::SurveyApp.Properties.Resources.plus__1_;
-            this.btnRegisterSurvey.Location = new System.Drawing.Point(401, 0);
+            this.btnRegisterSurvey.Location = new System.Drawing.Point(692, 0);
             this.btnRegisterSurvey.Name = "btnRegisterSurvey";
             this.btnRegisterSurvey.Size = new System.Drawing.Size(159, 62);
             this.btnRegisterSurvey.TabIndex = 26;
@@ -259,6 +261,7 @@ namespace SurveyApp.ContentForms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel2.Controls.Add(this.btnExport);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.btnRegisterSurvey);
@@ -266,6 +269,19 @@ namespace SurveyApp.ContentForms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 62);
             this.panel2.TabIndex = 33;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.White;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.Location = new System.Drawing.Point(850, 0);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(159, 62);
+            this.btnExport.TabIndex = 27;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // FormSurveyManager
             // 
@@ -303,5 +319,7 @@ namespace SurveyApp.ContentForms
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRegisterSurvey;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.SaveFileDialog sfdExportExcel;
     }
 }

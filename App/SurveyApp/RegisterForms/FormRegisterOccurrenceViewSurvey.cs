@@ -18,15 +18,17 @@ namespace SurveyApp.RegisterForms
             _surveyBLL = new SurveyBLL(SurveyModule.ConfiguratingModule());
         }
 
-        private void FormRegisterOccurrence_Load(object sender, System.EventArgs e) => Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
+        private void FormRegisterOccurrence_Load(object sender, System.EventArgs e)
+        {
+            Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
+            Helper.ResizeColumns(dgvSurveys, 173);
+        }
 
-        private void dgvSurveys_CellMouseDoubleClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e) 
+        private void dgvSurveys_CellMouseDoubleClick(object sender, System.Windows.Forms.DataGridViewCellMouseEventArgs e)
         {
             SurveySetting.SetActualSurvey(_surveyBLL.GetById((int)dgvSurveys.CurrentRow.Cells[0].Value).Data);
             new FormRegisterOccurrence().ShowDialog();
         }
-
-        private void btnRegisterOccurrence_Click_1(object sender, System.EventArgs e) => new FormRegisterOccurrence().ShowDialog();
 
         private void btnSearch_Click_1(object sender, System.EventArgs e) =>
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetByFilters(cmbStatus.SelectedIndex, txtResponsible.Text, dtpDateFrom.Value, dtpDateTo.Value, txtAdress.Text).Data);

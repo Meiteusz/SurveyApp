@@ -1,4 +1,5 @@
-﻿using Models.Entities.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Models.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,30 @@ namespace Models
 
                     response.Success = true;
                     response.Message = "Occurrence registered succefully";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public Response Update(Occurrence p_Occurrence)
+        {
+            Response response = new Response();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    context.Entry(p_Occurrence).State = EntityState.Modified;
+                    context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Occurrence updated succefully";
                 }
             }
             catch (Exception ex)

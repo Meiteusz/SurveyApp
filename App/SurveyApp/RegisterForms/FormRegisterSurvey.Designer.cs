@@ -85,8 +85,9 @@ namespace SurveyApp.RegisterForms
             // 
             this.pbLocalImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLocalImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLocalImage.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbLocalImage.ErrorImage")));
-            this.pbLocalImage.InitialImage = global::SurveyApp.Properties.Resources.Insert_Image_Here;
+            this.pbLocalImage.ErrorImage = null;
+            this.pbLocalImage.Image = ((System.Drawing.Image)(resources.GetObject("pbLocalImage.Image")));
+            this.pbLocalImage.InitialImage = null;
             this.pbLocalImage.Location = new System.Drawing.Point(698, 124);
             this.pbLocalImage.Name = "pbLocalImage";
             this.pbLocalImage.Size = new System.Drawing.Size(228, 223);
@@ -130,10 +131,6 @@ namespace SurveyApp.RegisterForms
             this.dtpOpeningDate.Name = "dtpOpeningDate";
             this.dtpOpeningDate.Size = new System.Drawing.Size(369, 29);
             this.dtpOpeningDate.TabIndex = 10;
-            // 
-            // ofdLocalImage
-            // 
-            this.ofdLocalImage.FileName = "openFileDialog1";
             // 
             // btnBack
             // 

@@ -38,7 +38,7 @@ namespace SurveyApp.ContentForms
         {
             var surveyUpdated = SurveySetting.ActualSurvey;
             surveyUpdated.Adress = txtAdress.Text;
-            surveyUpdated.Local = _surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data;
+            surveyUpdated.Local = _surveyBLL.SetLocalImage(Helper.ImageCheck(ofdLocalImage.FileName)).Data;
             surveyUpdated.Description = txtDescription.Text;
 
             var response = _surveyBLL.Update(surveyUpdated);
@@ -59,6 +59,7 @@ namespace SurveyApp.ContentForms
         {
             ofdLocalImage.Filter = "JPEG Files(*.jpg)|*.jpg";
             ofdLocalImage.ShowDialog();
+            ofdLocalImage.FileName = Helper.ImageCheck(ofdLocalImage.FileName);
             pbLocalImage.Image = Image.FromStream(new MemoryStream(_surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data));
         }
     }

@@ -9,9 +9,10 @@ namespace Controllers.Interfaces
         Occurrence Create();
         Array GetOccurrenceTypes();
         Response Insert(Occurrence p_Occurrence);
-        Response Delete(Occurrence occurrence);
+        Response Update(Occurrence p_Occurrence);
+        Response Delete(Occurrence p_occurrence);
         ResponseData<IEnumerable<dynamic>> GetAll();
         ResponseData<Occurrence> GetById(int p_Id);
-        ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible);
+        ResponseData<IEnumerable<dynamic>> GetByFilters(byte p_type, DateTime p_dateFrom, DateTime p_dateTo, string p_description, string p_surveyResponsible);
     }
 }

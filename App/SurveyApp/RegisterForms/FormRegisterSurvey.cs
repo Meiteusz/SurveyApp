@@ -22,7 +22,7 @@ namespace SurveyApp.RegisterForms
         {
             var survey = _surveyBLL.Create();
             survey.OpeningDate = dtpOpeningDate.Value;
-            survey.Local = _surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data;
+            survey.Local = _surveyBLL.SetLocalImage(Helper.ImageCheck(ofdLocalImage.FileName)).Data;
             survey.Description = txtDescription.Text;
             survey.Adress = txtAdress.Text;
 
@@ -37,6 +37,7 @@ namespace SurveyApp.RegisterForms
         {
             ofdLocalImage.Filter = "JPEG Files(*.jpg)|*.jpg";
             ofdLocalImage.ShowDialog();
+            ofdLocalImage.FileName = Helper.ImageCheck(ofdLocalImage.FileName);
             pbLocalImage.Image = Image.FromStream(new MemoryStream(_surveyBLL.SetLocalImage(ofdLocalImage.FileName).Data));
         }
     }

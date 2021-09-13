@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Resources;
 
 namespace Controllers
 {
@@ -24,8 +25,14 @@ namespace Controllers
 
         public Response Insert(Survey survey)
         {
-            survey.AnalistId = UserSetting.LoggedUser.Id;
-            return _survey.Insert(survey);
+            Response response = survey.SurveyValidate(false);
+
+            if (response.Success)
+            {
+                survey.AnalistId = UserSetting.LoggedUser.Id;
+                return _survey.Insert(survey);
+            }
+            return response;
         }
 
         #region Image --> Image setted on this block
@@ -64,7 +71,11 @@ namespace Controllers
 
         public Response Update(Survey survey)
         {
-            return _survey.Update(survey);
+            Response response = survey.SurveyValidate(true);
+
+            if (response.Success)
+                return _survey.Update(survey);
+            return response;
         }
 
         public Response Delete(Survey survey)

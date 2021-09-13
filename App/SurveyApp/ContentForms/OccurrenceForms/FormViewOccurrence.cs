@@ -33,7 +33,14 @@ namespace SurveyApp.ContentForms.OccurrenceForms
 
         private void btnConfirm_Click(object sender, System.EventArgs e)
         {
+            var occurrence = OccurrenceSetting.ActualOccurrence;
 
+            occurrence.Date = dtpDate.Value;
+            occurrence.Type = (byte)cmbType.SelectedIndex;
+            occurrence.Description = txtDescription.Text;
+
+            var response = _occurrenceBLL.Update(occurrence);
+            MessageBox.Show(response.Message);
         }
 
         private void btnUpdate_Click(object sender, System.EventArgs e)
@@ -41,7 +48,6 @@ namespace SurveyApp.ContentForms.OccurrenceForms
             dtpDate.Enabled = true;
             cmbType.Enabled = true;
             txtDescription.Enabled = true;
-            txtSurveyResponsible.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)

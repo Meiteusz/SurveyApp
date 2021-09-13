@@ -1,6 +1,10 @@
 ﻿using Controllers;
 using InjectionModules;
 using SurveyApp.RegisterForms;
+using System.Windows.Forms;
+using Syncfusion.XlsIO;
+using System.IO;
+using System.Data;
 
 namespace SurveyApp.ContentForms
 {
@@ -17,7 +21,7 @@ namespace SurveyApp.ContentForms
         private void FormSurveyManager_Load(object sender, System.EventArgs e)
         {
             Helper.LoadDataGrid(dgvSurveys, _surveyBLL.GetAll().Data);
-            ResizeColumns();
+            Helper.ResizeColumns(dgvSurveys, 173);
             cmbStatus.DataSource = _surveyBLL.GetSurveyStatus();
         }
 
@@ -36,10 +40,36 @@ namespace SurveyApp.ContentForms
 
         private void btnBack_Click_1(object sender, System.EventArgs e) => Helper.ChangeForm(this, new FormContentAnalyst());
 
-        private void ResizeColumns()
+        private void btnExport_Click(object sender, System.EventArgs e)
         {
-            for (int i = 0; i < dgvSurveys.Columns.Count; i++)
-                dgvSurveys.Columns[i].Width = 173;
+            using (ExcelEngine excelEngine = new ExcelEngine()) // this code gonna be transfered to a control class
+            {
+                IApplication application = excelEngine.Excel;
+                application.DefaultVersion = ExcelVersion.Excel2013;
+                IWorkbook workbook = application.Workbooks.Create(1);
+                IWorksheet worksheet = workbook.Worksheets[0];
+
+                for (int i = 1; i < dgvSurveys.Columns.Count + 1; i++)
+                {
+                    worksheet.Range[1, i].Text = dgvSurveys.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dgvSurveys.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dgvSurveys.Columns.Count; j++)
+                    {
+                        worksheet.Range[i + 2, j + 1].Text = dgvSurveys.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                sfdExportExcel.Filter = "XLSX Files(*.xlsx)|*.xlsx ";
+                if (sfdExportExcel.ShowDialog().Equals(DialogResult.OK))
+                {
+                    FileStream fs = new FileStream(sfdExportExcel.FileName, FileMode.Create);
+                    workbook.SaveAs(fs);
+                    fs.Dispose();
+                }
+            }
+            MessageBox.Show("Export done!");
         }
     }
 }

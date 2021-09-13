@@ -19,7 +19,7 @@ namespace SurveyApp.ContentForms.UserForms
         private void FormUserManager_Load(object sender, System.EventArgs e)
         {
             Helper.LoadDataGrid(dgvUsers, _userBLL.GetAll().Data);
-            ResizeColumns();
+            Helper.ResizeColumns(dgvUsers, 173);
             dgvUsers.Columns["Password"].Visible = false;
         }
 
@@ -31,12 +31,6 @@ namespace SurveyApp.ContentForms.UserForms
         {
             UserSetting.SetActualUser(_userBLL.GetById((int)dgvUsers.CurrentRow.Cells[0].Value).Data);
             new FormViewUser().ShowDialog();
-        }
-
-        private void ResizeColumns()
-        {
-            for (int i = 0; i < dgvUsers.Columns.Count; i++)
-                dgvUsers.Columns[i].Width = 173;
         }
     }
 }

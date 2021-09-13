@@ -117,7 +117,7 @@ namespace Controllers
 
         public Response Insert(User user)
         {
-            Response response = user.UserValidate();
+            Response response = user.UserValidate(false);
 
             if (response.Success)
             {
@@ -130,7 +130,7 @@ namespace Controllers
 
         public Response Update(User user)
         {
-            Response response = user.UserValidate();
+            Response response = user.UserValidate(true);
 
             if (response.Success)
             {

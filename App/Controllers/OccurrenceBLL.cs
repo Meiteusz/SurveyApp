@@ -22,7 +22,20 @@ namespace Controllers
 
         public Response Insert(Occurrence p_Occurrence)
         {
-            return _occurrence.Insert(p_Occurrence);
+            Response response = p_Occurrence.OccurrenceValidate(false);
+
+            if (response.Success)
+                return _occurrence.Insert(p_Occurrence);
+            return response;
+        }
+
+        public Response Update(Occurrence p_Occurrence)
+        {
+            Response response = p_Occurrence.OccurrenceValidate(true);
+
+            if (response.Success)
+                return _occurrence.Update(p_Occurrence);
+            return response;
         }
 
         public Response Delete(Occurrence occurrence)

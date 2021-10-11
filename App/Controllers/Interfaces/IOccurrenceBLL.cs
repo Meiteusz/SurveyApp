@@ -14,5 +14,6 @@ namespace Controllers.Interfaces
         ResponseData<IEnumerable<dynamic>> GetAll();
         ResponseData<Occurrence> GetById(int p_Id);
         ResponseData<IEnumerable<dynamic>> GetByFilters(byte p_type, DateTime p_dateFrom, DateTime p_dateTo, string p_description, string p_surveyResponsible);
+        ResponseData<int> GetOccurenceCount();
     }
 }

@@ -21,6 +21,8 @@ namespace SurveyApp
         {
             lblName.Text = UserSetting.LoggedUser.Name;
             lblUserType.Text = _userBLL.GetNameOfUserType(UserSetting.LoggedUser.UserType);
+
+            lblUsersCount.Text = _userBLL.GetUsersCount().Data.ToString();
         }
 
         private void btnLogout_Click_1(object sender, EventArgs e) => Helper.ChangeForm(this, new FormLogin());

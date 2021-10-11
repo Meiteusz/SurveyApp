@@ -3,6 +3,7 @@ using Controllers.Interfaces;
 using InjectionModules;
 using SurveyApp.RegisterForms;
 using Syncfusion.XlsIO;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 

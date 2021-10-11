@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Resources;
 
 namespace Controllers
 {
@@ -98,5 +97,14 @@ namespace Controllers
             return _survey.GetByFilters(p_status, p_responsible, p_dateFrom, p_dateTo, p_adress);
         }
 
+        public ResponseData<int> GetSurveysCount()
+        {
+            return _survey.GetSurveysCount();
+        }
+
+        public ResponseData<int> GetSurveyCountByUser(int UserId)
+        {
+            return _survey.GetSurveyCountByUser(UserId);
+        }
     }
 }

@@ -40,15 +40,22 @@ namespace SurveyApp
             this.lblUserType = new System.Windows.Forms.Label();
             this.btnSettings = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblSurveysCount = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblSurveysUserCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,45 +181,99 @@ namespace SurveyApp
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Location = new System.Drawing.Point(390, 194);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(296, 144);
+            this.panel3.Size = new System.Drawing.Size(247, 122);
             this.panel3.TabIndex = 7;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(194, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(102, 144);
-            this.panel7.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 45);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 64);
+            this.label2.Location = new System.Drawing.Point(14, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 23);
+            this.label2.Size = new System.Drawing.Size(134, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Surveys Count";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel7.Controls.Add(this.lblSurveysCount);
+            this.panel7.Location = new System.Drawing.Point(162, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(85, 122);
+            this.panel7.TabIndex = 9;
+            // 
+            // lblSurveysCount
+            // 
+            this.lblSurveysCount.AutoSize = true;
+            this.lblSurveysCount.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSurveysCount.ForeColor = System.Drawing.Color.White;
+            this.lblSurveysCount.Location = new System.Drawing.Point(20, 40);
+            this.lblSurveysCount.Name = "lblSurveysCount";
+            this.lblSurveysCount.Size = new System.Drawing.Size(44, 45);
+            this.lblSurveysCount.TabIndex = 9;
+            this.lblSurveysCount.Text = "0";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(763, 194);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(247, 122);
+            this.panel4.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(45, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "p/ User";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Surveys Count";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel5.Controls.Add(this.lblSurveysUserCount);
+            this.panel5.Location = new System.Drawing.Point(162, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(85, 122);
+            this.panel5.TabIndex = 9;
+            // 
+            // lblSurveysUserCount
+            // 
+            this.lblSurveysUserCount.AutoSize = true;
+            this.lblSurveysUserCount.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSurveysUserCount.ForeColor = System.Drawing.Color.White;
+            this.lblSurveysUserCount.Location = new System.Drawing.Point(20, 40);
+            this.lblSurveysUserCount.Name = "lblSurveysUserCount";
+            this.lblSurveysUserCount.Size = new System.Drawing.Size(44, 45);
+            this.lblSurveysUserCount.TabIndex = 9;
+            this.lblSurveysUserCount.Text = "0";
             // 
             // FormContentAnalyst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 624);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -227,6 +288,10 @@ namespace SurveyApp
             this.panel3.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -242,8 +307,13 @@ namespace SurveyApp
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSurveysCount;
         private System.Windows.Forms.Button btnSurveyManager;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblSurveysUserCount;
     }
 }

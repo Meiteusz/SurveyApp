@@ -9,5 +9,6 @@ namespace Models.Entities.Interfaces
         Response Update(User p_user);
         ResponseData<List<User>> GetAll();
         ResponseData<User> GetById(int p_Id);
+        ResponseData<int> GetUsersCount();
     }
 }

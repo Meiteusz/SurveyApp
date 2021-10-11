@@ -42,11 +42,14 @@ namespace SurveyApp
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUsersCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -167,10 +170,11 @@ namespace SurveyApp
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Firebrick;
+            this.panel7.Controls.Add(this.lblUsersCount);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(586, 191);
+            this.panel7.Location = new System.Drawing.Point(554, 191);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(102, 144);
+            this.panel7.Size = new System.Drawing.Size(85, 122);
             this.panel7.TabIndex = 9;
             // 
             // label1
@@ -178,7 +182,7 @@ namespace SurveyApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 52);
+            this.label1.Location = new System.Drawing.Point(22, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 45);
             this.label1.TabIndex = 9;
@@ -187,10 +191,33 @@ namespace SurveyApp
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(392, 191);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(296, 144);
+            this.panel4.Size = new System.Drawing.Size(247, 122);
             this.panel4.TabIndex = 10;
+            // 
+            // lblUsersCount
+            // 
+            this.lblUsersCount.AutoSize = true;
+            this.lblUsersCount.Font = new System.Drawing.Font("Lucida Sans Unicode", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUsersCount.ForeColor = System.Drawing.Color.White;
+            this.lblUsersCount.Location = new System.Drawing.Point(21, 40);
+            this.lblUsersCount.Name = "lblUsersCount";
+            this.lblUsersCount.Size = new System.Drawing.Size(44, 45);
+            this.lblUsersCount.TabIndex = 10;
+            this.lblUsersCount.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Users Count";
             // 
             // FormContentAdmin
             // 
@@ -210,6 +237,8 @@ namespace SurveyApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,5 +256,7 @@ namespace SurveyApp
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblUsersCount;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -11,5 +11,7 @@ namespace Models.Entities.Interfaces
         ResponseData<IEnumerable<dynamic>> GetAll();
         ResponseData<Survey> GetById(int p_SurveyId);
         ResponseData<IEnumerable<dynamic>> GetByFilters(int p_status, string p_responsible, DateTime p_dateFrom, DateTime p_dateTo, string p_adress);
+        ResponseData<int> GetSurveysCount();
+        ResponseData<int> GetSurveyCountByUser(int p_userId);
     }
 }

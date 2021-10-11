@@ -11,5 +11,6 @@ namespace Models.Entities.Interfaces
         ResponseData<IEnumerable<dynamic>> GetAll();
         ResponseData<Occurrence> GetById(int p_Id);
         ResponseData<IEnumerable<dynamic>> GetByFilters(byte type, DateTime dateFrom, DateTime dateTo, string description, string surveyResponsible);
+        ResponseData<int> GetOccurenceCount();
     }
 }

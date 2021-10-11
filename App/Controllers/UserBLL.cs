@@ -154,5 +154,10 @@ namespace Controllers
         public Array GetUserTypes() => Enum.GetValues(typeof(UserTypes));
 
         public string GetNameOfUserType(byte userType) => Enum.GetName(typeof(UserTypes), userType);
+
+        public ResponseData<int> GetUsersCount()
+        {
+            return _User.GetUsersCount();
+        }
     }
 }

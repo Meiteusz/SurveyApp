@@ -17,6 +17,8 @@ namespace Models
         public Survey Survey { get; set; }
         #endregion
 
+        private readonly ISurvey _survey;
+
         public Response Insert(Occurrence p_Occurrence)
         {
             Response response = new Response();
@@ -180,6 +182,50 @@ namespace Models
 
                     response.Data = occurrencesList;
                     response.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public Response DateValidateRegister(Occurrence p_occurrence)
+        {
+            Response response = new Response();
+
+            try
+            {
+                var survey = _survey.GetById(p_occurrence.SurveyId);
+
+                if (survey.Data.OpeningDate > p_occurrence.Date)
+                    response.Message = "Invalid occurrence date! occurrence date can't be less than survey vinculed date\n";
+                else
+                    response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public ResponseData<int> GetOccurenceCount()
+        {
+            ResponseData<int> response = new ResponseData<int>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var survey = context.Occurrences.Count();
+
+                    response.Success = true;
+                    response.Data = survey;
                 }
             }
             catch (Exception ex)

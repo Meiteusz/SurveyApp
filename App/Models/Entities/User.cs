@@ -162,5 +162,28 @@ namespace Models
 
             return response;
         }
+
+        public ResponseData<int> GetUsersCount()
+        {
+            ResponseData<int> response = new ResponseData<int>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var survey = context.Users.Count();
+
+                    response.Success = true;
+                    response.Data = survey;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
     }
 }

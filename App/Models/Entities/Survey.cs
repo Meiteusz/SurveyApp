@@ -183,5 +183,49 @@ namespace Models
 
             return response;
         }
+
+        public ResponseData<int> GetSurveysCount()
+        {
+            ResponseData<int> response = new ResponseData<int>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var countSurveys = context.Surveys.Count();
+
+                    response.Data = countSurveys;
+                    response.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public ResponseData<int> GetSurveyCountByUser(int p_userId)
+        {
+            ResponseData<int> response = new ResponseData<int>();
+
+            try
+            {
+                using (var context = new SurveyAppContext())
+                {
+                    var countSurveys = context.Surveys.Where(s => s.AnalistId.Equals(p_userId)).Count();
+
+                    response.Data = countSurveys;
+                    response.Success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
     }
 }

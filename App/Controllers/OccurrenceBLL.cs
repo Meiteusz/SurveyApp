@@ -57,5 +57,10 @@ namespace Controllers
         {
             return _occurrence.GetByFilters(type, dateFrom, dateTo, description, surveyResponsible);
         }
+
+        public ResponseData<int> GetOccurenceCount()
+        {
+            return _occurrence.GetOccurenceCount();
+        }
     }
 }

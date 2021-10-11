@@ -18,5 +18,6 @@ namespace Controllers
         public ResponseData<User> GetById(int p_Id);
         Array GetUserTypes();
         public string GetNameOfUserType(byte userType);
+        ResponseData<int> GetUsersCount();
     }
 }

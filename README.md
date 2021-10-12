@@ -29,4 +29,4 @@ After cloned the project on Visual Studio, download the references and run the c
 - Content - Operator: *Settings, occurrence details, register a new occurrence, search, export to excel*
 <img src="https://github.com/Meiteusz/SurveyApp/blob/master/Gifs/OperatorContent.gif" width="600">
 
-Hope you like 😄
+Hope you enjoy 😄
